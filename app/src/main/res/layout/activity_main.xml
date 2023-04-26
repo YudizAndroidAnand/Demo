@@ -1,76 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    android:orientation="vertical">
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Profile Screen"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="39dp"
-        tools:ignore="MissingConstraints" />
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:text="Register Screen"
+        android:textSize="25dp"
+        >
+    </TextView>
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="100dp"
-        tools:ignore="MissingConstraints"/>
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:hint="Name">
 
+    </EditText>
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="wrap_content"
+        android:id="@+id/text3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:text="Gmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="185dp"
-        tools:ignore="MissingConstraints"/>
-
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:hint="Email"
+        >
+    </EditText>
     <EditText
-        android:id="@+id/editTextPhone"
-        android:layout_width="wrap_content"
+        android:id="@+id/text4"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="phone"
-        android:text="Mobile Number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="278dp"
-        tools:ignore="MissingConstraints"/>
-
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:hint="Mobile Number"
+        >
+    </EditText>
     <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="wrap_content"
+        android:id="@+id/text5"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:text="Password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="384dp"
-        tools:ignore="MissingConstraints"/>
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:hint="Password"
+        >
+    </EditText>
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginRight="150dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="50dp"
         android:text="Submit"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="510dp"
-        tools:ignore="MissingConstraints"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        >
+    </Button>
+</LinearLayout>
