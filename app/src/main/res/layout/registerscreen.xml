@@ -14,8 +14,8 @@
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="39dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_editor_absoluteY="20dp"
+        />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -26,8 +26,7 @@
         android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="100dp"
-        tools:ignore="MissingConstraints"/>
+        app:layout_editor_absoluteY="100dp" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
@@ -38,7 +37,7 @@
         android:text="Gmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="185dp"
+        app:layout_editor_absoluteY="150dp"
         tools:ignore="MissingConstraints"/>
 
     <EditText
@@ -50,7 +49,7 @@
         android:text="Mobile Number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="278dp"
+        app:layout_editor_absoluteY="200dp"
         tools:ignore="MissingConstraints"/>
 
     <EditText
@@ -62,7 +61,7 @@
         android:text="Password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="384dp"
+       app:layout_editor_absoluteY="250dp"
         tools:ignore="MissingConstraints"/>
 
     <Button
@@ -70,7 +69,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="510dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_editor_absoluteY="350dp"
         tools:ignore="MissingConstraints"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
