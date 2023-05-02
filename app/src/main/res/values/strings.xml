@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="text_label">hello</string>
-    <string name="action_text">hi</string>
+
 </resources>
