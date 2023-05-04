@@ -9,10 +9,8 @@
     <color name="white">#F8F6F6</color>
     <color name="greeen">#05A56D</color>
     <color name="lite_pink">#EDB0EF</color>
-    <color name="yellow">#FF0</color>
-    <color name="red">#CB0000</color>
-
-
-
+    <color name="yellow">#979730</color>
+    <color name="myclr">#989599</color>
+    <color name="red">#D50000</color>
     <color name="abc">#0532A5</color>
 </resources>

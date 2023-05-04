@@ -18,25 +18,21 @@
         app:layout_editor_absoluteY="100dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="98dp">
-
     </ImageView>
-<TextView
-    android:id="@+id/imageview2"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/imageview1"
-    android:layout_marginTop="30dp"
-    android:textSize="20dp"
-    android:text="Yudiz"
-    android:textColor="@color/black"
-    android:background="@drawable/shapes2"
-    >
-
-</TextView>
-
-
+    <TextView
+        android:id="@+id/imageview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageview1"
+        android:layout_marginTop="30dp"
+        android:textSize="20dp"
+        android:text="Yudiz"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@drawable/shapes2">
+    </TextView>
     <Button
         android:id="@+id/btnBgSelector"
         android:layout_width="wrap_content"
@@ -48,18 +44,16 @@
         android:backgroundTint="@color/selector_item"
         android:text="Colored Selector"
         tools:ignore="MissingConstraints" />
-
     <ImageButton
+        android:id="@+id/imagebutton"
         android:layout_width="49dp"
         android:layout_height="41dp"
         android:layout_marginTop="50dp"
+        android:backgroundTint="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:src="@drawable/selector_airplanemode_onoff"
         app:layout_constraintTop_toBottomOf="@+id/btnBgSelector"
-
         >
-
     </ImageButton>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

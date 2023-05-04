@@ -3,12 +3,13 @@
 <padding android:top="10dp" android:right="10dp" android:left="10dp" android:bottom="10dp">
 
 </padding>
-    <solid android:color="@color/teal_200">
 
-    </solid>
-    <size android:width="20dp" android:height="20dp">
+    <size android:width="20dp" android:height="10dp">
 
     </size>
+    <solid android:color="@color/yellow">
+
+    </solid>
 
 
 </shape>

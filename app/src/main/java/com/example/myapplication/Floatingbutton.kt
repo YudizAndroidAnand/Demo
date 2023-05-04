@@ -27,7 +27,7 @@ class Floatingbutton : AppCompatActivity() {
         extfloatbnt.setOnClickListener{
 
             Snackbar.make(it, "Another Snackbar", Snackbar.LENGTH_LONG).setAction("view") {
-                Snackbar.make(it, "Welcomes you!!!", Snackbar.LENGTH_LONG).show()
+                Snackbar.make(it, "Welcomes", Snackbar.LENGTH_LONG).show()
             }.show()
 
         }
