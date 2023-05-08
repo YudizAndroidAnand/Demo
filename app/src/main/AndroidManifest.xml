@@ -2,18 +2,51 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
-
+        <activity
+            android:name=".DialogActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_RuntimePermission"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_Layout"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_View"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_Fragment"
+            android:exported="false" />
+        <activity
+            android:name=".custombutton"
+            android:exported="false" />
+        <activity
+            android:name=".Shapes_drawable"
+            android:exported="false" />
         <activity
             android:name=".Tab_layout"
+            android:exported="false" />
+        <activity
+            android:name=".RecyclerView"
+            android:exported="false" />
+        <activity
+            android:name=".Floatingbutton"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_Allproject"
             android:exported="true"
             tools:ignore="DuplicateActivity">
             <intent-filter>

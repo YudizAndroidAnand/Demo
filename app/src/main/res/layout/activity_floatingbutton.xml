@@ -6,24 +6,28 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingbtn"
+        android:id="@+id/floating_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:contentDescription="add floating button"
         android:layout_margin="20dp"
         android:src="@drawable/ic_add"
         >
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/exfloatingbtn"
+        android:id="@+id/ex_floating_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_margin="20dp"
+        app:icon="@drawable/ic_add"
+        android:textColor="@color/red"
+        app:iconTint="@color/red"
         android:backgroundTint="@color/myclr"
         android:text="Add"
         >

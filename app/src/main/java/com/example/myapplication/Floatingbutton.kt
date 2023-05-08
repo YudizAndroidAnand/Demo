@@ -1,34 +1,34 @@
 package com.example.myapplication
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 
 class Floatingbutton : AppCompatActivity() {
 
-    lateinit var   floatbtn : FloatingActionButton
-    lateinit var extfloatbnt : ExtendedFloatingActionButton
+//    lateinit var   floatbtn : FloatingActionButton
+//    lateinit var extfloatbnt : ExtendedFloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_floatingbutton)
 
-        floatbtn = findViewById(R.id.floatingbtn)
-        extfloatbnt = findViewById(R.id.exfloatingbtn)
+//        floatbtn = findViewById(R.id.floating_btn)
+//        extfloatbnt = findViewById(R.id.ex_floating_btn)
 
-        floatbtn.setOnClickListener{
+        findViewById<FloatingActionButton>(R.id.floating_btn).setOnClickListener{
             Snackbar.make(it, "Simple Snackbar", Snackbar.LENGTH_LONG).show()
         }
 
 
-        extfloatbnt.setOnClickListener{
+        findViewById<ExtendedFloatingActionButton>(R.id.ex_floating_btn).setOnClickListener{
 
-            Snackbar.make(it, "Another Snackbar", Snackbar.LENGTH_LONG).setAction("view") {
-                Snackbar.make(it, "Welcomes", Snackbar.LENGTH_LONG).show()
-            }.show()
+            Snackbar.make(it, "Another Snackbar", Snackbar.LENGTH_LONG).setAction("view"){
+                Snackbar.make(it, "Welcomes", Snackbar.LENGTH_LONG).setBackgroundTint(Color.RED).show()
+            }.setActionTextColor(Color.GREEN).show()
 
         }
 

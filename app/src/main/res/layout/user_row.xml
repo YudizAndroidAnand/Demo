@@ -6,10 +6,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
     android:orientation="horizontal"
-    android:padding="5dp"
     android:elevation="5dp"
-    android:layout_margin="2dp"
-    android:layout_marginTop="5dp"
+    android:layout_margin="6dp"
+
+
 
     >
 
@@ -17,42 +17,81 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/greeen"
-        android:paddingHorizontal="10dp"
+        android:paddingHorizontal="10dp">
 
+        <TextView
+            android:id="@+id/textvievectorname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_people"
+            tools:ignore="MissingConstraints"
+            >
 
-
-
-        >
+        </TextView>
 
         <TextView
             android:id="@+id/textviewname"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="anand"
-            android:textSize="@dimen/text_size_for_recycleview"
+            android:textSize="30dp"
             android:textStyle="bold"
             android:textColor="@color/white"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toEndOf="@id/textvievectorname"
             tools:ignore="MissingConstraints">
         </TextView>
 
         <TextView
+            android:id="@+id/textvievectorcall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_call"
+            android:layout_marginTop="3dp"
+            app:layout_constraintTop_toBottomOf="@+id/textviewname"
+            tools:ignore="MissingConstraints">
+
+        </TextView>
+        <TextView
             android:id="@+id/textviewmobilenumber"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/text_size_for_recycleview"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="20dp"
             app:layout_constraintTop_toBottomOf="@+id/textviewname"
+
             android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@id/textvievectorcall"
             android:text="7600740075">
+
+        </TextView>
+
+
+        <TextView
+            android:id="@+id/textvievectoremail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/ic_email"
+
+            app:layout_constraintTop_toBottomOf="@+id/textviewmobilenumber"
+            tools:ignore="MissingConstraints">
 
         </TextView>
 
         <TextView
             android:id="@+id/textviewemail"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/text_size_for_recycleview"
             android:textColor="@color/white"
+            android:layout_marginTop="3dp"
             app:layout_constraintTop_toBottomOf="@+id/textviewmobilenumber"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toEndOf="@+id/textvievectoremail"
             android:text="anand.patel@yudiz.com">
 
         </TextView>
@@ -83,17 +122,7 @@
             >
         </Button>
 
-        <Button
-            android:id="@+id/alldeletebutton"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="@drawable/ic_delete"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginEnd="80dp"
-            >
-        </Button>
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

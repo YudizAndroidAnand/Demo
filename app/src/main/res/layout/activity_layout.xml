@@ -4,16 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".custombutton">
+    tools:context=".Activity_Layout">
 
-
-    <com.example.myapplication.BtnProgressbar
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:size = "Large"
-        app:text = "button"
-        android:layout_margin="20dp"
-        app:custextcolor = "@color/black"
-        android:id="@+id/customvieww">
-    </com.example.myapplication.BtnProgressbar>
+        android:text="Yudiz sol"
+        android:textSize="30dp"/>
+
 </RelativeLayout>

@@ -40,10 +40,24 @@ class Tab_layout : AppCompatActivity() {
         tabLayout!!.addOnTabSelectedListener(object :TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
 
-                if (tab != null) {
+                if (tab != null ) {
                     viewPage!!.currentItem = tab.position
                 }
+                if (tab != null) {
+                    viewPage?.currentItem = tab!!.position
+                }
+                when (tab?.position) {
 
+                    0 -> tabLayout?.getTabAt(0)?.setIcon(R.drawable.ic_home)
+                        ?.setText("Home")
+
+                    1 -> tabLayout?.getTabAt(1)?.setIcon(R.drawable.ic_group)
+                        ?.setText("Chats")
+
+                    2 -> tabLayout?.getTabAt(2)?.setIcon(R.drawable.ic_call)
+                        ?.setText("Calls")
+
+                }
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {

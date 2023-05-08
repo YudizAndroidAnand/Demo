@@ -1,14 +1,17 @@
 package com.example.myapplication
+import android.annotation.SuppressLint
+import android.content.Context
 import android.view.LayoutInflater
-import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-class adapter(private var userlist:MutableList<userdata>):RecyclerView.Adapter<adapter.MyViewHolder>() {
+class Adapter(val context: Context, private var userlist: MutableList<userdata>):RecyclerView.Adapter<Adapter.MyViewHolder>() {
+
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.user_row, parent, false)
         return MyViewHolder(itemView)
@@ -18,29 +21,27 @@ class adapter(private var userlist:MutableList<userdata>):RecyclerView.Adapter<a
         return userlist.size
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+
 
         val currentposition = userlist[position]
         holder.username.text = currentposition.name
         holder.usermobilenumber.text = currentposition.mobilenumber
         holder.useremail.text = currentposition.email
-
+        holder.checkboxbtn.isChecked = currentposition.isSelected
 
         holder.deletebtn.setOnClickListener {
 
+            userlist.remove(userlist[position])
             notifyItemRemoved(position)
             notifyItemRangeChanged(position, userlist.size)
-            userlist.remove(userlist[position])
 
         }
-        if(holder.checkboxbtn.isSelected==false){
-            holder.checkboxbtn.setOnClickListener {
-            holder.alldeletebtn.setOnClickListener {
-                notifyItemRemoved(position)
-                notifyItemRangeChanged(position, userlist.size)
-                userlist.remove(userlist[position])
-            }
-            }
+        holder.checkboxbtn.setOnClickListener{
+
+            userlist.set(position,userdata(currentposition.name,currentposition.mobilenumber,currentposition.email,true))
+            notifyItemChanged(position)
         }
     }
 
@@ -51,6 +52,5 @@ class adapter(private var userlist:MutableList<userdata>):RecyclerView.Adapter<a
         val useremail: TextView = itemView.findViewById(R.id.textviewemail)
         val deletebtn: Button = itemView.findViewById(R.id.deletebutton)
         val checkboxbtn: CheckBox = itemView.findViewById(R.id.checkbox)
-        val alldeletebtn: Button = itemView.findViewById(R.id.alldeletebutton)
     }
 }

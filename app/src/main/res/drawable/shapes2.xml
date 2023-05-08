@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
-<padding android:top="10dp" android:right="10dp" android:left="10dp" android:bottom="10dp">
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
 
-</padding>
+    <padding
+        android:bottom="10dp"
+        android:left="10dp"
+        android:right="10dp"
+        android:top="10dp" />
 
-    <size android:width="20dp" android:height="10dp">
+    <stroke android:color="@color/red" android:width="5dp"/>
 
-    </size>
-    <solid android:color="@color/yellow">
+    <size
+        android:height="12dp"
+        android:width="10dp"/>
 
-    </solid>
+    <solid android:color="@color/yellow" />
 
 
 </shape>
