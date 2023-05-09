@@ -10,7 +10,7 @@
     <color name="greeen">#0A9F6A</color>
     <color name="lite_pink">#EDB0EF</color>
     <color name="yellow">#979730</color>
-    <color name="myclr">#F3E3F6</color>
+    <color name="myclr">#EFD6F3</color>
     <color name="red">#D50000</color>
-    <color name="abc">#1EA676</color>
+    <color name="abc">@color/yellow</color>
 </resources>
