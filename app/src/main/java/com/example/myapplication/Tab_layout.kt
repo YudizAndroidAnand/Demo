@@ -3,7 +3,7 @@ package com.example.myapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
-import com.example.tablayout.Viewadapter
+import com.example.myapplication.Fragment.Viewadapter
 import com.google.android.material.tabs.TabLayout
 
 class Tab_layout : AppCompatActivity() {
