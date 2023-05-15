@@ -11,9 +11,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="120dp"
         android:background="@color/yellow"
         android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="bold"/>
+    <Button
+        android:id="@+id/backbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="back"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="200dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

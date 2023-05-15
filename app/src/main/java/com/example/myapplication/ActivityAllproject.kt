@@ -1,5 +1,4 @@
 package com.example.myapplication
-import DialogActivity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -61,7 +60,7 @@ class ActivityAllproject : AppCompatActivity() {
             startActivity(myIntent)
         }
         findViewById<Button>(R.id.btn11).setOnClickListener {
-            val myIntent = Intent(this, DialogActivity::class.java)
+            val myIntent = Intent(this, DialogBoxActivity::class.java)
             startActivity(myIntent)
         }
         findViewById<Button>(R.id.btn12).setOnClickListener {

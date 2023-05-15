@@ -13,4 +13,6 @@
     <color name="myclr">#EFD6F3</color>
     <color name="red">#D50000</color>
     <color name="abc">@color/yellow</color>
+    <color name="greay">#CDC7C7</color>
+
 </resources>

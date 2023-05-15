@@ -20,12 +20,12 @@ class FragmentForHome : Fragment() {
         val view = inflater.inflate(R.layout.fragment__home_1, container, false)
 
         val communication : CommunicteTwoFragment = activity as CommunicteTwoFragment
+       // val A = CommunicteTwoFragment()
         val nametext : EditText = view.findViewById(R.id.edittext)
         view.findViewById<Button>(R.id.btn).setOnClickListener {
             val name = nametext.text.toString()
             communication.sendText(name)
-            val intent = Intent(context,PassingData::class.java)
-            startActivity(intent)
+
         }
         return view
     }
