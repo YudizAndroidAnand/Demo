@@ -17,6 +17,7 @@ import com.example.myapplication.RecycleView.RecyclerView
 class ActivityNotification : AppCompatActivity() {
 
     private lateinit var notificationManager: NotificationManager
+    val id : Int = 12
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,7 +55,7 @@ class ActivityNotification : AppCompatActivity() {
                 NotificationCompat.BigTextStyle()
                     .bigText("Much longer text that cannot fit one line.Much longer text that cannot fit one line.Much longer text that cannot fit one line."))
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-        notificationManager.notify(12, builder.build())
+        notificationManager.notify(id, builder.build())
     }
 
     private fun createfullscreennotification() {
@@ -70,19 +71,18 @@ class ActivityNotification : AppCompatActivity() {
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setContentIntent(pendingIntent)
             .setAutoCancel(true)
-        notificationManager.notify(12, builder.build())
+        notificationManager.notify(id, builder.build())
     }
 
     private fun createCustomNotification() {
-        val notificationLayout =
-            RemoteViews(packageName, R.layout.activity_custom_notification_view)
+        val notificationLayout = RemoteViews(packageName, R.layout.activity_custom_notification_view)
         val builder = NotificationCompat.Builder(this, "channel2")
             .setContentTitle("Hotstar")
             .setSmallIcon(R.drawable.ic_home)
             .setStyle(NotificationCompat.DecoratedCustomViewStyle())
             .setCustomBigContentView(notificationLayout)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-        notificationManager.notify(12, builder.build())
+        notificationManager.notify(id, builder.build())
     }
 
     private fun createNotificationChannel() {

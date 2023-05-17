@@ -54,14 +54,13 @@ class DialogBoxActivity : AppCompatActivity() {
         val datePickerDialog = DatePickerDialog(
             this,
             { _, year, monthOfYear, dayOfMonth ->
-                val selectedDate = Calendar.getInstance()
-                selectedDate.set(year, monthOfYear, dayOfMonth)
+                currentDate.set(year, monthOfYear, dayOfMonth)
 
-                if (isFromDate) {
-                    selectedFromDate = selectedDate
+                if(isFromDate) {
+                    selectedFromDate = currentDate
                     fromDateEditText.setText(formatDate(selectedFromDate))
                 } else {
-                    selectedToDate = selectedDate
+                    selectedToDate = currentDate
                     toDateEditText.setText(formatDate(selectedToDate))
                 }
             },
@@ -140,7 +139,6 @@ class DialogBoxActivity : AppCompatActivity() {
             toDateEditText.error = "To Date must be after From Date"
             return false
         }
-
         return true
     }
 
