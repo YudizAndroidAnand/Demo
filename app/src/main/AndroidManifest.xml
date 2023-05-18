@@ -9,38 +9,39 @@
     <uses-permission
         android:name="android.permission.BATTERY_STATS"
         tools:ignore="ProtectedPermissions" />
-
     <application
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".AnimationsActivity"
+            android:name=".ActivityLayout"
             android:exported="false" />
-        <!-- <activity -->
-        <!-- android:name=".Dialog.DialogDateTime" -->
-        <!-- android:exported="false" /> -->
+         <activity
+         android:name=".ActivityView"
+         android:exported="false" />
         <activity
-            android:name=".BroadcastReceiver.BroadcastReceiverTask"
-            android:exported="false" /> <!-- <activity -->
-        <!-- android:name=".BroadcastReceiver.BroadcastReceiverCustomActivity" -->
-        <!-- android:exported="false" /> -->
-        <activity
-            android:name=".BroadcastReceiver.BroadcastRecieverActivity"
+            android:name=".CustomButton"
             android:exported="false" />
         <activity
-            android:name=".WorkManagerActivity"
+            android:name=".ShapesDrawable"
+            android:exported="false" />
+         <activity
+         android:name=".Tab_layout"
+         android:exported="false" />
+        <activity
+            android:name=".RecycleView.RecyclerView"
             android:exported="false" />
         <activity
-            android:name=".Dialog.DialogBoxActivity"
+            android:name=".FloatingButton"
             android:exported="false" />
         <activity
-            android:name=".IntentFilterActivity"
+            android:name=".ActivityRuntimePermission"
+            android:exported="false" />
+        <activity
+            android:name=".Fragment.ActivityFragment"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
@@ -51,66 +52,61 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CustomNotificationView"
+            android:name=".Dialog.DialogDateTime"
             android:exported="false" />
         <activity
-            android:name=".PassingData"
-            android:exported="false" />
-        <activity
-            android:name=".Layout.SetLayout"
-            android:exported="false" />
-        <activity
-            android:name=".Layout.LayoutFrame"
-            android:exported="false" />
-        <activity
-            android:name=".Layout.LayoutRelative"
-            android:exported="false" />
-        <activity
-            android:name=".Layout.LayoutLinear"
-            android:exported="false" />
-        <activity
-            android:name=".Layout.LayoutConstraint"
-            android:exported="false" />
-        <activity
-            android:name=".ActivityRuntimePermission"
-            android:exported="false" />
-        <activity
-            android:name=".ActivityLayout"
-            android:exported="false" />
-        <activity
-            android:name=".ActivityView"
-            android:exported="false" />
-        <activity
-            android:name=".Fragment.ActivityFragment"
-            android:exported="false" />
-        <activity
-            android:name=".CustomButton"
-            android:exported="false" />
-        <activity
-            android:name=".Shapesdrawable"
-            android:exported="false" />
-        <activity
-            android:name=".Tab_layout"
-            android:exported="false" />
-        <activity
-            android:name=".RecycleView.RecyclerView"
-            android:exported="false" />
-        <activity
-            android:name=".Floatingbutton"
+            android:name=".Dialog.DialogBoxActivity"
             android:exported="false" />
         <activity
             android:name=".ActivityNotification"
             android:exported="false" />
         <activity
-            android:name=".Dialog.DialogDateTime"
+            android:name=".Layout.SetLayout"
+            android:exported="false" />
+        <activity
+            android:name=".Layout.LayoutConstraint"
+            android:exported="false" />
+        <activity
+            android:name=".Layout.LayoutFrame"
+            android:exported="false" />
+        <activity
+            android:name=".Layout.LayoutLinear"
+            android:exported="false" />
+        <activity
+            android:name=".Layout.LayoutRelative"
+            android:exported="false" />
+        <activity
+            android:name=".MainScreen.ActivityAllProject2"
+            android:exported="false" />
+        <activity
+            android:name=".IntentFilterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BroadcastReceiver.BroadcastReceiverTask"
+            android:exported="false" />
+        <activity
+            android:name=".BroadcastReceiver.BroadcastReceiverActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BroadcastReceiver.BroadcastReceiverCustomActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WorkManagerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SaveFileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AnimationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainScreen.ActivityAllProject"
             android:exported="true"
             android:hardwareAccelerated="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

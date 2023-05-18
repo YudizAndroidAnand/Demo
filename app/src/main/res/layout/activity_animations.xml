@@ -16,14 +16,44 @@
         android:layout_marginTop="100dp"
         android:background="@drawable/ic_googlepic"/>
     <Button
-        android:id="@+id/btnAnimation"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnBlink"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/imageviewGooglePic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Animation"
+        android:text="Blink Animation"
         android:textSize="20dp"
+        android:textStyle="bold"/>
+    <Button
+        android:id="@+id/btnZoom"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btnBlink"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Rotate Animation"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+    <Button
+        android:id="@+id/btnBounce"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btnZoom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Bounce Animation"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btnBounce"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Move Right Side Animation"
+        android:textSize="18dp"
         android:textStyle="bold"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

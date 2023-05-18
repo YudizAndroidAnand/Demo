@@ -7,7 +7,7 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 
-class Floatingbutton : AppCompatActivity() {
+class FloatingButton : AppCompatActivity() {
 
 //    lateinit var   floatbtn : FloatingActionButton
 //    lateinit var extfloatbnt : ExtendedFloatingActionButton

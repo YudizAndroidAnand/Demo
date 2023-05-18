@@ -4,18 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityAllproject">
+    tools:context=".MainScreen.ActivityAllProject">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="My Project"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
     <Button
         android:id="@+id/btn1"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/btnWidth"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview"
+        android:layout_marginTop="15dp"
         android:text="Layouts"/>
     <Button
         android:id="@+id/btn2"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/btnWidth"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +35,7 @@
         android:text="View"/>
     <Button
         android:id="@+id/btn3"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/btnWidth"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +43,7 @@
         android:text="Drawables"/>
     <Button
         android:id="@+id/btn4"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/btnWidth"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,15 +51,15 @@
         android:text="Custom Controls"/>
     <Button
         android:id="@+id/btn5"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/btnWidth"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn4"
-        android:text="Vector, Shapes and Drawable Selector"/>
+        android:text="Vector,Shapes,Selector"/>
     <Button
         android:id="@+id/btn6"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/btnWidth"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,7 +67,7 @@
         android:text="View Pager and TabLayout"/>
     <Button
         android:id="@+id/btn7"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/btnWidth"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,23 +75,23 @@
         android:text="RecyclerView"/>
     <Button
         android:id="@+id/btn8"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/btnWidth"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn7"
-        android:text="SnackBar and Floating Action Button"/>
+        android:text="SnackBar,Floating Action"/>
     <Button
         android:id="@+id/btn9"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/btnWidth"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn8"
-        android:text="Runtime Permission,Start activity, Return result"/>
+        android:text="Runtime Permission"/>
     <Button
         android:id="@+id/btn10"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/btnWidth"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,14 +99,14 @@
         android:text="Fragments"/>
     <Button
         android:id="@+id/btn11"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/btnWidth"
         android:layout_height="wrap_content"
-        android:text="Dialogs / Material Dialogs (time, date, alert)"
+        android:text="Dialogs(time, date, alert)"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn10" />
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/btnWidth"
         android:layout_height="wrap_content"
         android:id="@+id/btn12"
         android:text="notification"
@@ -102,7 +114,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn11"/>
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/btnWidth"
         android:layout_height="wrap_content"
         android:id="@+id/btn13"
         android:text="Four Layout"
@@ -110,36 +122,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn12"/>
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/btnWidth"
         android:layout_height="wrap_content"
-        android:id="@+id/btn14"
-        android:text="Intent, filter, action, category, data"
+        android:id="@+id/btnNextScreen"
+        android:text="Next Screen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn13"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn15"
-        android:text="Broadcast Receiver"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn14"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn16"
-        android:text="Work-manager"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn15"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn17"
-        android:text="sav a file"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn16"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn13"
+        android:backgroundTint="@color/greeen"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="25dp"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

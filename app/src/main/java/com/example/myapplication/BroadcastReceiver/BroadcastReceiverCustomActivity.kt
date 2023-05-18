@@ -25,13 +25,6 @@ class BroadcastReceiverCustomActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_broadcast2)
-        val view = LayoutInflater.from(this).inflate(R.layout.broadcastcustomnotification, null, false)
-        view.findViewById<Button>(R.id.btn1).setOnClickListener {
-            onStart()
-        }
-        view.findViewById<Button>(R.id.btn2).setOnClickListener{
-            onDestroy()
-        }
     }
     override fun onDestroy() {
         super.onDestroy()
