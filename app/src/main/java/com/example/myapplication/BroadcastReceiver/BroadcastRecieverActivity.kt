@@ -14,16 +14,14 @@ import androidx.core.app.NotificationManagerCompat
 import com.example.myapplication.R
 
 class BroadcastRecieverActivity : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_broadcast_reciever)
 
-
         val filter = IntentFilter(Intent.ACTION_BATTERY_CHANGED)
         registerReceiver(battery,filter)
     }
-    val  battery  = object : BroadcastReceiver(){
+    private val  battery  = object : BroadcastReceiver(){
         @SuppressLint("MissingPermission")
         override fun onReceive(context: Context, intent:Intent?) {
             var batteryLevel = intent?.getIntExtra(BatteryManager.EXTRA_LEVEL,-1)

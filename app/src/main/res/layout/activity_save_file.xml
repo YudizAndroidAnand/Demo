@@ -4,19 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SaveFileActivity">
+    android:id="@+id/fileActivity"
+    tools:context=".SaveFileActivity"
+    android:orientation="vertical">
 
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:id="@+id/imageviewdownload"
+        android:id="@+id/imageviewPic"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_android"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="50dp"/>
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <Button
+        android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/imageviewdownload"
-        tools:ignore="MissingConstraints" />
+        android:text="Save Image"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toStartOf="@+id/btnSaveAndShare"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/imageviewPic"/>
+
+    <Button
+        android:id="@+id/btnSaveAndShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save And Share"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnSave"
+        app:layout_constraintTop_toBottomOf="@id/imageviewPic"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

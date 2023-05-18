@@ -3,7 +3,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapplication.BroadcastReceiver.BroadcastRecieverActivity
+import com.example.myapplication.BroadcastReceiver.BroadcastReceiverTask
+import com.example.myapplication.Dialog.DialogDateTime
+import com.example.myapplication.Fragment.ActivityFragment
 import com.example.myapplication.Layout.SetLayout
 import com.example.myapplication.RecycleView.RecyclerView
 
@@ -40,7 +42,7 @@ class ActivityAllproject : AppCompatActivity() {
             startActivity(Intent(this, ActivityFragment::class.java))
         }
         findViewById<Button>(R.id.btn11).setOnClickListener {
-            startActivity(Intent(this, DialogBoxActivity::class.java))
+            startActivity(Intent(this, DialogDateTime::class.java))
         }
         findViewById<Button>(R.id.btn12).setOnClickListener {
             startActivity(Intent(this, ActivityNotification::class.java))
@@ -52,10 +54,13 @@ class ActivityAllproject : AppCompatActivity() {
             startActivity(Intent(this, IntentFilterActivity::class.java))
         }
         findViewById<Button>(R.id.btn15).setOnClickListener {
-            startActivity(Intent(this, BroadcastRecieverActivity::class.java))
+            startActivity(Intent(this, BroadcastReceiverTask::class.java))
         }
-        findViewById<Button>(R.id.btn15).setOnClickListener {
+        findViewById<Button>(R.id.btn16).setOnClickListener {
             startActivity(Intent(this, WorkManagerActivity::class.java))
+        }
+        findViewById<Button>(R.id.btn17).setOnClickListener {
+            startActivity(Intent(this, SaveFileActivity::class.java))
         }
     }
 }

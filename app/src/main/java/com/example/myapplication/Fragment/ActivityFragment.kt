@@ -1,13 +1,10 @@
-package com.example.myapplication
+package com.example.myapplication.Fragment
 
-import com.example.myapplication.Fragment.FragmentForHome
-import com.example.myapplication.Fragment.FragmentForProfile
-import com.example.myapplication.Fragment.FragmentForSetting
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.myapplication.Fragment.CommunicteTwoFragment
+import com.example.myapplication.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ActivityFragment : AppCompatActivity(),CommunicteTwoFragment {

@@ -1,7 +1,8 @@
-package com.example.myapplication
+package com.example.myapplication.Dialog
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import java.text.ParseException
@@ -10,16 +11,17 @@ import java.util.*
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.example.myapplication.R
 
 class DialogBoxActivity : AppCompatActivity() {
 
-    private lateinit var fromDateEditText: EditText
-    private lateinit var toDateEditText: EditText
-    private lateinit var timeEditText: EditText
-    private lateinit var submitButton: Button
-    private lateinit var selectedFromDate: Calendar
-    private lateinit var selectedToDate: Calendar
-    private lateinit var selectedTime: Calendar
+     lateinit var fromDateEditText: EditText
+     lateinit var toDateEditText: EditText
+     lateinit var timeEditText: EditText
+     lateinit var submitButton: Button
+     lateinit var selectedFromDate: Calendar
+     lateinit var selectedToDate: Calendar
+     lateinit var selectedTime: Calendar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +46,7 @@ class DialogBoxActivity : AppCompatActivity() {
 
         submitButton.setOnClickListener {
             if (validateInputs()) {
+                startActivity(Intent(this,DialogDateTime::class.java))
                 showConfirmationDialog()
             }
         }
@@ -89,16 +92,17 @@ class DialogBoxActivity : AppCompatActivity() {
         timePickerDialog.show()
     }
 
-    private fun showConfirmationDialog() {
+    private fun showConfirmationDialog()  {
+        val obj = DialogDateTime()
         val alertDialogBuilder = AlertDialog.Builder(this)
         alertDialogBuilder.setTitle("Confirmation")
         alertDialogBuilder.setMessage("Are you sure to submit the details?")
         alertDialogBuilder.setPositiveButton("Yes") { _, _ ->
-            val resultTextView: TextView = findViewById(R.id.resultTextView)
+            obj.textFormData = findViewById(R.id.textviewFormData)
             val result = "From Date: ${formatDate(selectedFromDate)}\n" +
                     "To Date: ${formatDate(selectedToDate)}\n" +
                     "Time: ${formatTime(selectedTime)}"
-            resultTextView.text = result
+            obj.textFormData.text = result
         }
         alertDialogBuilder.setNegativeButton("No") { dialog, _ ->
             dialog.dismiss()
@@ -151,12 +155,12 @@ class DialogBoxActivity : AppCompatActivity() {
         }
     }
 
-    private fun formatDate(calendar: Calendar): String {
+    fun formatDate(calendar: Calendar): String {
         val dateFormat = android.text.format.DateFormat.getDateFormat(this)
         return dateFormat.format(calendar.time)
     }
 
-    private fun formatTime(calendar: Calendar): String {
+    fun formatTime(calendar: Calendar): String {
         val timeFormat = android.text.format.DateFormat.getTimeFormat(this)
         return timeFormat.format(calendar.time)
     }
