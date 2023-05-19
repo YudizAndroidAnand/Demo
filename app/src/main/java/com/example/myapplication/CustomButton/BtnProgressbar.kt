@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.CustomButton
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ProgressBar
 import android.widget.TextView
+import com.example.myapplication.R
+
 class BtnProgressbar : FrameLayout {
      lateinit var  rootlayout : FrameLayout
      lateinit var txtview: TextView
@@ -30,10 +32,13 @@ class BtnProgressbar : FrameLayout {
     }
 
     private  fun getfromxml(attr: AttributeSet? , context: Context){
-        val data = context.obtainStyledAttributes(attr,R.styleable.ButtonProgressBar)
+        val data = context.obtainStyledAttributes(attr, R.styleable.ButtonProgressBar)
             text = data.getString(R.styleable.ButtonProgressBar_text).toString()
             isButtonenabled = data.getBoolean(R.styleable.ButtonProgressBar_enable,true)
-            bgColor = data.getColor(R.styleable.ButtonProgressBar_bgcolor,context.resources.getColor(R.color.white))
+            bgColor = data.getColor(
+                R.styleable.ButtonProgressBar_bgcolor,context.resources.getColor(
+                    R.color.white
+                ))
             data.recycle()
         }
     private fun initKBtnProgressbar(context: Context) {

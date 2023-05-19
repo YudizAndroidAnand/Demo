@@ -26,7 +26,7 @@ class BroadcastReceiverActivity : AppCompatActivity() {
         override fun onReceive(context: Context, intent:Intent?) {
             var batteryLevel = intent?.getIntExtra(BatteryManager.EXTRA_LEVEL,-1)
             val builder = NotificationCompat.Builder(context, "battery_channel_id")
-                .setContentTitle("Notification")
+                .setContentTitle("com/example/myapplication/Notification")
                 .setContentText("Battery Level : $batteryLevel%")
                 .setSmallIcon(R.drawable.ic_home)
             val notificationManager = NotificationManagerCompat.from(context)

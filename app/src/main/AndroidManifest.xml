@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission
@@ -18,18 +19,21 @@
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyApplication">
+        android:theme="@style/Theme.MyApplication" >
         <activity
-            android:name=".FileDownloadWorker"
+            android:name=".Dialog.DialogBoxBookingMain"
             android:exported="false" />
         <activity
-            android:name=".ActivityLayout"
+            android:name=".Dialog.DialogBoxBooking"
             android:exported="false" />
         <activity
-            android:name=".ActivityView"
+            android:name=".Layout.ActivityLayout"
             android:exported="false" />
         <activity
-            android:name=".CustomButton"
+            android:name=".Layout.ActivityView"
+            android:exported="false" />
+        <activity
+            android:name=".CustomButton.CustomButton"
             android:exported="false" />
         <activity
             android:name=".ShapesDrawable"
@@ -56,7 +60,7 @@
             android:name=".Dialog.DialogBoxActivity"
             android:exported="false" />
         <activity
-            android:name=".ActivityNotification"
+            android:name=".Notification.ActivityNotification"
             android:exported="false" />
         <activity
             android:name=".Layout.SetLayout"
@@ -78,7 +82,7 @@
             android:exported="false" />
         <activity
             android:name=".IntentFilterActivity"
-            android:exported="false">
+            android:exported="false" >
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 
@@ -100,6 +104,9 @@
             android:name=".WorkManagerActivity"
             android:exported="false" />
         <activity
+            android:name=".FileDownloadWorker"
+            android:exported="false" />
+        <activity
             android:name=".SaveFileActivity"
             android:exported="false" />
         <activity
@@ -108,7 +115,7 @@
         <activity
             android:name=".MainScreen.ActivityAllProject"
             android:exported="true"
-            android:hardwareAccelerated="true">
+            android:hardwareAccelerated="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

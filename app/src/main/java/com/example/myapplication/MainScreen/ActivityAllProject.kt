@@ -4,9 +4,12 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.*
+import com.example.myapplication.CustomButton.CustomButton
 import com.example.myapplication.Dialog.DialogDateTime
 import com.example.myapplication.Fragment.ActivityFragment
+import com.example.myapplication.Layout.ActivityView
 import com.example.myapplication.Layout.SetLayout
+import com.example.myapplication.Notification.ActivityNotification
 import com.example.myapplication.RecycleView.RecyclerView
 
 class ActivityAllProject : AppCompatActivity() {
@@ -15,7 +18,7 @@ class ActivityAllProject : AppCompatActivity() {
         setContentView(R.layout.activity_allproject)
 
         findViewById<Button>(R.id.btn1).setOnClickListener {
-            startActivity(Intent(this, ActivityLayout::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
         }
         findViewById<Button>(R.id.btn2).setOnClickListener {
             startActivity(Intent(this, ActivityView::class.java))
@@ -48,7 +51,7 @@ class ActivityAllProject : AppCompatActivity() {
             startActivity(Intent(this, ActivityNotification::class.java))
         }
         findViewById<Button>(R.id.btn13).setOnClickListener {
-            startActivity(Intent(this, ActivityAllProject2::class.java))
+            startActivity(Intent(this, SetLayout::class.java))
         }
         findViewById<Button>(R.id.btnNextScreen).setOnClickListener {
             startActivity(Intent(this, ActivityAllProject2::class.java))

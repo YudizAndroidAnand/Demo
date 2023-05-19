@@ -1,7 +1,9 @@
 package com.example.myapplication.Dialog
 import android.app.AlertDialog
 import android.app.DatePickerDialog
+import android.app.Dialog
 import android.app.TimePickerDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +15,7 @@ import android.widget.EditText
 import android.widget.TextView
 import com.example.myapplication.R
 
-class DialogBoxActivity : AppCompatActivity() {
+open class DialogBoxActivity : AppCompatActivity() {
 
      lateinit var fromDateEditText: EditText
      lateinit var toDateEditText: EditText
@@ -31,6 +33,11 @@ class DialogBoxActivity : AppCompatActivity() {
         toDateEditText = findViewById(R.id.toDateEditText)
         timeEditText = findViewById(R.id.timeEditText)
         submitButton = findViewById(R.id.submitButton)
+
+        findViewById<Button>(R.id.btnSub).setOnClickListener {
+
+
+        }
 
         fromDateEditText.setOnClickListener {
             showDatePickerDialog(true)
@@ -98,11 +105,11 @@ class DialogBoxActivity : AppCompatActivity() {
         alertDialogBuilder.setTitle("Confirmation")
         alertDialogBuilder.setMessage("Are you sure to submit the details?")
         alertDialogBuilder.setPositiveButton("Yes") { _, _ ->
-            obj.textFormData = findViewById(R.id.textviewFormData)
+           // textFormData = findViewById(R.id.textviewFormData)
             val result = "From Date: ${formatDate(selectedFromDate)}\n" +
                     "To Date: ${formatDate(selectedToDate)}\n" +
                     "Time: ${formatTime(selectedTime)}"
-            obj.textFormData.text = result
+           // obj.textFormData.text = result
         }
         alertDialogBuilder.setNegativeButton("No") { dialog, _ ->
             dialog.dismiss()
@@ -165,3 +172,7 @@ class DialogBoxActivity : AppCompatActivity() {
         return timeFormat.format(calendar.time)
     }
 }
+
+
+
+

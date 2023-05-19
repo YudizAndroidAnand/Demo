@@ -1,8 +1,10 @@
-package com.example.myapplication
+package com.example.myapplication.CustomButton
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
- class CustomButton : AppCompatActivity() {
+import com.example.myapplication.R
+
+class CustomButton : AppCompatActivity() {
     private lateinit var customButton: BtnProgressbar
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

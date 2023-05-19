@@ -4,28 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityRuntimePermission">
+    tools:context=".Dialog.DialogBoxBookingMain">
 
-    <ImageView
-        android:id="@+id/imageViewGallery"
+    <Button
+        android:id="@+id/btnEnterData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/greeen"
+        android:text="Eneter Information"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="20dp"/>
-    <Button
-        android:id="@+id/buttonPicture"
+        android:layout_marginTop="100dp"/>
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Pick Image"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:backgroundTint="@color/greeen"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewGallery" />
-
+        android:id="@+id/textview"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

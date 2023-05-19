@@ -26,7 +26,7 @@
         android:textSize="20dp"
         android:textStyle="bold"/>
     <Button
-        android:id="@+id/btnZoom"
+        android:id="@+id/btnRotate"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/btnBlink"
@@ -39,17 +39,37 @@
         android:id="@+id/btnBounce"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/btnZoom"
+        app:layout_constraintTop_toBottomOf="@+id/btnRotate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="Bounce Animation"
         android:textSize="20dp"
         android:textStyle="bold"/>
     <Button
-        android:id="@+id/btn"
+        android:id="@+id/btnMoveRightSide"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/btnBounce"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Move Right Side Animation"
+        android:textSize="18dp"
+        android:textStyle="bold"/>
+    <Button
+        android:id="@+id/btnMoveUp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btnMoveRightSide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Move Right Side Animation"
+        android:textSize="18dp"
+        android:textStyle="bold"/>
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btnMoveUp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="Move Right Side Animation"

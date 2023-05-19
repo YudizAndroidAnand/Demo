@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.Notification
 import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -12,6 +12,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
+import com.example.myapplication.R
 import com.example.myapplication.RecycleView.RecyclerView
 
 class ActivityNotification : AppCompatActivity() {
@@ -75,7 +76,9 @@ class ActivityNotification : AppCompatActivity() {
     }
 
     private fun createCustomNotification() {
-        val notificationLayout = RemoteViews(packageName, R.layout.activity_custom_notification_view)
+        val notificationLayout = RemoteViews(packageName,
+            R.layout.activity_custom_notification_view
+        )
         val builder = NotificationCompat.Builder(this, "channel2")
             .setContentTitle("Hotstar")
             .setSmallIcon(R.drawable.ic_home)

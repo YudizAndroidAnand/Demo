@@ -16,8 +16,7 @@ import androidx.core.content.ContextCompat
 class ActivityRuntimePermission : AppCompatActivity() {
 
     private lateinit var imageView: ImageView
-    private lateinit var selectImageButton: Button
-
+    private lateinit var selectButton: Button
     companion object {
         private const val READ_MEDIA_IMAGES_PERMISSION_CODE = 1
         private const val GALLERY_REQUEST_CODE = 2
@@ -25,19 +24,17 @@ class ActivityRuntimePermission : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_runtime_permission)
-
-        imageView = findViewById(R.id.imageView)
-        selectImageButton = findViewById(R.id.buttonLoadPicture)
-
-        selectImageButton.setOnClickListener {
+        imageView = findViewById(R.id.imageViewGallery)
+        selectButton = findViewById(R.id.buttonPicture)
+        selectButton.setOnClickListener {
             if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_MEDIA_IMAGES) == PackageManager.PERMISSION_GRANTED) {
-                launchGallery()
+                gallery()
             } else {
-                requestReadExternalStoragePermission()
+                requestExternalStoragePermission()
             }
         }
     }
-    private fun requestReadExternalStoragePermission() {
+    private fun requestExternalStoragePermission() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(this, android.Manifest.permission.READ_MEDIA_IMAGES)) {
             showPermissionDeniedDialog()
         } else {
@@ -47,7 +44,7 @@ class ActivityRuntimePermission : AppCompatActivity() {
     private fun showPermissionDeniedDialog() {
         AlertDialog.Builder(this)
             .setTitle("Permission Required")
-            .setMessage("This app needs permission to access media files.")
+            .setMessage(" Aims needs permission to access media files.")
             .setPositiveButton("Grant Permission") { _, _ ->
                 val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
                 val uri: Uri = Uri.fromParts("package", packageName, null)
@@ -57,21 +54,8 @@ class ActivityRuntimePermission : AppCompatActivity() {
             .setNegativeButton("Cancel", null)
             .show()
     }
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == READ_MEDIA_IMAGES_PERMISSION_CODE) {
-            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                launchGallery()
-            } else {
-                Toast.makeText(
-                    this,
-                    "Permission denied. Please grant permission to access media files.",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        }
-    }
-    private fun launchGallery() {
+
+    private fun gallery() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
         startActivityForResult(intent, GALLERY_REQUEST_CODE)
@@ -82,6 +66,20 @@ class ActivityRuntimePermission : AppCompatActivity() {
         if (requestCode == GALLERY_REQUEST_CODE && resultCode == RESULT_OK) {
             data?.data?.let { uri ->
                 imageView.setImageURI(uri)
+            }
+        }
+    }
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == READ_MEDIA_IMAGES_PERMISSION_CODE) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                gallery()
+            } else {
+                Toast.makeText(
+                    this,
+                    "Permission denied.grant permission.",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
