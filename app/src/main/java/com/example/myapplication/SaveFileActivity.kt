@@ -23,7 +23,6 @@ import java.io.FileOutputStream
 import java.io.OutputStream
 class SaveFileActivity : AppCompatActivity() {
      lateinit var image : ImageView
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_save_file)
@@ -114,9 +113,9 @@ class SaveFileActivity : AppCompatActivity() {
         val fileName = "${System.currentTimeMillis()}.jpg"
         var fos : OutputStream? = null
         var imgUri : Uri? = null
+        val contentResolver = contentResolver
+        val contentValue = ContentValues()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
-            val contentResolver = contentResolver
-            val contentValue = ContentValues()
             contentValue.apply {
                 put(MediaStore.MediaColumns.DISPLAY_NAME,fileName)
                 put(MediaStore.MediaColumns.MIME_TYPE,"image/*")

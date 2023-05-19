@@ -48,7 +48,7 @@ class ActivityAllProject : AppCompatActivity() {
             startActivity(Intent(this, ActivityNotification::class.java))
         }
         findViewById<Button>(R.id.btn13).setOnClickListener {
-            startActivity(Intent(this, SetLayout::class.java))
+            startActivity(Intent(this, ActivityAllProject2::class.java))
         }
         findViewById<Button>(R.id.btnNextScreen).setOnClickListener {
             startActivity(Intent(this, ActivityAllProject2::class.java))
