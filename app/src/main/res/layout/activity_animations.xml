@@ -14,6 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="100dp"
+        android:transitionName="traName"
         android:background="@drawable/ic_googlepic"/>
     <Button
         android:id="@+id/btnBlink"
@@ -66,7 +67,7 @@
         android:textSize="18dp"
         android:textStyle="bold"/>
     <Button
-        android:id="@+id/btnRotateimage"
+        android:id="@+id/btnRotateImage"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/btnMoveUp"
@@ -79,20 +80,20 @@
         android:id="@+id/btnSingle"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/btnRotateimage"
+        app:layout_constraintTop_toBottomOf="@+id/btnRotateImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Rotate image"
+        android:text="single"
         android:textSize="18dp"
         android:textStyle="bold"/>
     <Button
         android:id="@+id/btnPair"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/btnRotateimage"
+        app:layout_constraintTop_toBottomOf="@+id/btnSingle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Rotate image"
+        android:text="Pair "
         android:textSize="18dp"
         android:textStyle="bold"/>
 

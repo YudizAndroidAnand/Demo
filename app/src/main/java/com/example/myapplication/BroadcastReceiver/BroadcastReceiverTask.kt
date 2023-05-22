@@ -13,7 +13,7 @@ class BroadcastReceiverTask : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_broadcast_receiver_task2)
         findViewById<Button>(R.id.btn1).setOnClickListener {
-            startActivity(Intent(this,BroadcastReceiverTask::class.java))
+            startActivity(Intent(this,BroadcastReceiverActivity::class.java))
         }
         findViewById<Button>(R.id.btn2).setOnClickListener {
             startActivity(Intent(this,BroadcastReceiverCustomActivity::class.java))

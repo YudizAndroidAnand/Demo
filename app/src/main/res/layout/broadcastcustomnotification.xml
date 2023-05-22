@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/btn1"
+        android:id="@+id/btnStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start"
@@ -12,10 +12,10 @@
         android:textColor="@color/white"
         android:backgroundTint="@color/black"
         android:textStyle="bold"
-        android:layout_marginStart="60dp"/>
+        android:layout_marginStart="40dp"/>
 
     <Button
-        android:id="@+id/btn2"
+        android:id="@+id/btnStop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Stop"

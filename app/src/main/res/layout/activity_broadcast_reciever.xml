@@ -27,7 +27,7 @@
         android:text="Battery Level :"
         android:textSize="25dp" />
     <TextView
-        android:id="@+id/textviewforbattery"
+        android:id="@+id/textviewForBattery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@+id/textview"

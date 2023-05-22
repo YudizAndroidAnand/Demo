@@ -1,18 +1,14 @@
 package com.example.myapplication
 
-import android.animation.AnimatorInflater
 import android.animation.ObjectAnimator
-import android.annotation.SuppressLint
 import android.app.ActivityOptions
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Pair
 import android.view.animation.AnimationUtils
-import android.view.animation.PathInterpolator
 import android.widget.Button
 import android.widget.ImageView
-import androidx.core.view.ViewCompat
-import java.nio.file.Path
 
 class AnimationsActivity : AppCompatActivity() {
 
@@ -44,20 +40,20 @@ class AnimationsActivity : AppCompatActivity() {
             animator.duration = 800
             animator.start()
         }
-        findViewById<Button>(R.id.btnRotateimage).setOnClickListener{
+        findViewById<Button>(R.id.btnRotateImage).setOnClickListener{
             val animator =  ObjectAnimator.ofFloat(imageview,  "rotation", 0f, 180f)
             animator.duration = 800
             animator.start()
         }
         findViewById<Button>(R.id.btnSingle).setOnClickListener {
-            val intent = Intent(this,SaveFileActivity::class.java)
-            val option = ActivityOptions.makeSceneTransitionAnimation(this,carIv, ViewCompat.getTransitionName(carIv))
+            val intent = Intent(this,MainActivity::class.java)
+            val option = ActivityOptions.makeSceneTransitionAnimation(this,imageview,"traName")
             startActivity(intent,option.toBundle())
         }
 
         findViewById<Button>(R.id.btnPair).setOnClickListener {
-            val intent = Intent(this,SaveFileActivity::class.java)
-            val option = ActivityOptions.makeSceneTransitionAnimation(this, Pair.create(carIv,"m"),Pair.create(carIv,"m"))
+            val intent = Intent(this,MainActivity::class.java)
+            val option = ActivityOptions.makeSceneTransitionAnimation(this, Pair(imageview,"traName"))
             startActivity(intent,option.toBundle())
         }
     }

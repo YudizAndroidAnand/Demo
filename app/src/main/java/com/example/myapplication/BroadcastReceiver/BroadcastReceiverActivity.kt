@@ -8,6 +8,7 @@ import android.content.IntentFilter
 import android.os.BatteryManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.RemoteViews
 import android.widget.TextView
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -24,15 +25,16 @@ class BroadcastReceiverActivity : AppCompatActivity() {
     private val  battery  = object : BroadcastReceiver(){
         @SuppressLint("MissingPermission")
         override fun onReceive(context: Context, intent:Intent?) {
-            var batteryLevel = intent?.getIntExtra(BatteryManager.EXTRA_LEVEL,-1)
-            val builder = NotificationCompat.Builder(context, "battery_channel_id")
-                .setContentTitle("com/example/myapplication/Notification")
-                .setContentText("Battery Level : $batteryLevel%")
-                .setSmallIcon(R.drawable.ic_home)
+            val batteryLevel1 = intent?.getIntExtra(BatteryManager.EXTRA_LEVEL, 0)
+            val builder = NotificationCompat.Builder(context, "channel2")
+                .setContentTitle("Battery Level : $batteryLevel1%")
+                .setSmallIcon(R.drawable.ic_battery)
+                .setStyle(NotificationCompat.DecoratedCustomViewStyle())
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             val notificationManager = NotificationManagerCompat.from(context)
-            notificationManager.notify(1,builder.build())
-            val textView : TextView = findViewById(R.id.textviewforbattery)
-            textView.text = batteryLevel.toString()
+            notificationManager.notify(12, builder.build())
+            val textview:TextView = findViewById(R.id.textviewForBattery)
+            textview.text = batteryLevel1.toString()
         }
     }
     override fun onDestroy() {

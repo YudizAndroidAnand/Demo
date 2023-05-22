@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -21,6 +22,7 @@ class FloatingButton : AppCompatActivity() {
 
         findViewById<FloatingActionButton>(R.id.floating_btn).setOnClickListener{
             Snackbar.make(it, "Simple Snackbar", Snackbar.LENGTH_LONG).show()
+
         }
 
 

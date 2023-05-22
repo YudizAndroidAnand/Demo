@@ -28,6 +28,8 @@ class ActivityAllProject2 : AppCompatActivity() {
         findViewById<Button>(R.id.btn18).setOnClickListener {
             startActivity(Intent(this, AnimationsActivity::class.java))
         }
-
+        findViewById<Button>(R.id.btn19).setOnClickListener {
+            startActivity(Intent(this,MultithreadingActivity::class.java))
+        }
     }
 }
