@@ -5,5 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MultithreadingTask.MultithreadingSecondTask">
-
+    <TextView
+        android:id="@+id/textview_first_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"/>
+    <TextView
+        android:id="@+id/textview_second_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_first_number"
+        android:layout_marginTop="50dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

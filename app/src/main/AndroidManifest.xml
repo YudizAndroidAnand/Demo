@@ -22,10 +22,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication" >
         <activity
-            android:name=".MultithreadingSecondTask"
+            android:name=".MultithreadingTask.MultithreadingSecondTask"
             android:exported="false" />
         <activity
-            android:name=".MultithreadingTask"
+            android:name=".MultithreadingTask.MultithreadingTask"
             android:exported="false" />
         <activity
             android:name=".MultithreadingTask.MultithreadingFirstTask"

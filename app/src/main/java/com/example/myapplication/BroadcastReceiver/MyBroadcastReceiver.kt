@@ -11,7 +11,7 @@ import android.widget.RemoteViews
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import com.example.myapplication.MainActivity
+import com.example.myapplication.Layout.MainActivity
 import com.example.myapplication.R
 
 class MyBroadcastReceiver: BroadcastReceiver() {

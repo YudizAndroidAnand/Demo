@@ -1,4 +1,5 @@
 package com.example.myapplication.Layout
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
@@ -7,6 +8,7 @@ import com.example.myapplication.R
 class ActivityView : AppCompatActivity() {
 
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view)
@@ -18,9 +20,6 @@ class ActivityView : AppCompatActivity() {
             spinner.adapter = adapter
 
         findViewById<Button>(R.id.buttonSubmit).setOnClickListener {
-            //implement code
-        }
-        findViewById<EditText>(R.id.edittext).setOnClickListener {
             //implement code
         }
         val toggle: ToggleButton = findViewById(R.id.btnToggle)

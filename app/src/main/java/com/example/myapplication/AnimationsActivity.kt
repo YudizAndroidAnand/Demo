@@ -9,6 +9,7 @@ import android.util.Pair
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
+import com.example.myapplication.Layout.MainActivity
 
 class AnimationsActivity : AppCompatActivity() {
 
@@ -46,13 +47,13 @@ class AnimationsActivity : AppCompatActivity() {
             animator.start()
         }
         findViewById<Button>(R.id.btnSingle).setOnClickListener {
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             val option = ActivityOptions.makeSceneTransitionAnimation(this,imageview,"traName")
             startActivity(intent,option.toBundle())
         }
 
         findViewById<Button>(R.id.btnPair).setOnClickListener {
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             val option = ActivityOptions.makeSceneTransitionAnimation(this, Pair(imageview,"traName"))
             startActivity(intent,option.toBundle())
         }

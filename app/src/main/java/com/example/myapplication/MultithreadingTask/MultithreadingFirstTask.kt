@@ -10,13 +10,13 @@ class MultithreadingFirstTask : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_multithreading)
         val textviewAddNumber : TextView = findViewById(R.id.textviewAddTwoNumber)
-        val firstnumber = 5
-        val Secondnumber = 2
+        val firstNumber = 5
+        val secondNumber = 2
         val thread: Thread = object : Thread() {
             override fun run() {
                 try {
                         runOnUiThread {
-                            val c = firstnumber+Secondnumber
+                            val c = firstNumber+secondNumber
                             textviewAddNumber.text = c.toString()
                     }
                 } catch (e: InterruptedException) {

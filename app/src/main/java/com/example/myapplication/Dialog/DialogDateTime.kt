@@ -14,7 +14,9 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import com.example.myapplication.R
+import java.text.Format
 import java.util.*
+import kotlin.properties.Delegates
 
 class DialogDateTime : AppCompatActivity() {
 
@@ -22,6 +24,10 @@ class DialogDateTime : AppCompatActivity() {
     private lateinit var toDatetxt: EditText
     private lateinit var timetxt: EditText
     lateinit var dialogMain : Dialog
+    var calyear = 0
+    var calmonth = 0
+    var calday = 0
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -29,26 +35,27 @@ class DialogDateTime : AppCompatActivity() {
         setContentView(R.layout.activity_dialog_date_time)
         dialogMain = Dialog(this)
         findViewById<Button>(R.id.btnclickkme).setOnClickListener {
-            val dialogView =  dialogMain.setContentView(R.layout.activity_dialog_box)
+            //val dialogView =  dialogMain.setContentView(R.layout.activity_dialog_box)
             fromDatetxt =dialogMain.findViewById(R.id.fromDateEditText)
             toDatetxt = dialogMain.findViewById(R.id.toDateEditText)
             timetxt = dialogMain.findViewById(R.id.timeEditText)
             val submitbtn = dialogMain.findViewById<Button>(R.id.submitButton)
             val cancelbtn = dialogMain.findViewById<Button>(R.id.cancelButton)
+            dialogMain.getWindow()?.setBackgroundDrawableResource(android.R.color.transparent)
             dialogMain.show()
 
             fromDatetxt.setOnClickListener {
+
                 val currentDate = Calendar.getInstance()
                 val datePickerDialog = DatePickerDialog(this, { _, year, monthOfYear, dayOfMonth ->
+                    calyear = year
+                    calmonth= monthOfYear
+                    calday= dayOfMonth
                     val selectedDate = Calendar.getInstance()
                     selectedDate.set(year, monthOfYear, dayOfMonth)
-                    if (true) {
                         val  selectedFromDate = selectedDate
                         fromDatetxt.setText(formatDate(selectedFromDate))
-                    } else {
-                        val  selectedToDate = selectedDate
-                        toDatetxt.setText(formatDate(selectedToDate))
-                    }
+
                 },
                     currentDate.get(Calendar.YEAR),
                     currentDate.get(Calendar.MONTH),
@@ -61,22 +68,14 @@ class DialogDateTime : AppCompatActivity() {
             toDatetxt.setOnClickListener {
                 val currentDate = Calendar.getInstance()
                 val datePickerDialog = DatePickerDialog(this, { _, year, monthOfYear, dayOfMonth ->
+
                     val selectedDate = Calendar.getInstance()
                     selectedDate.set(year, monthOfYear, dayOfMonth)
-
-                    if (false) {
-                        val  selectedFromDate = selectedDate
-                        fromDatetxt.setText(formatDate(selectedFromDate))
-                    } else {
-                        val  selectedToDate = selectedDate
-                        toDatetxt.setText(formatDate(selectedToDate))
-                    }
-                },
-                    currentDate.get(Calendar.YEAR),
-                    currentDate.get(Calendar.MONTH),
-                    currentDate.get(Calendar.DAY_OF_MONTH)
-                )
-
+                    val  selectedToDate = selectedDate
+                    toDatetxt.setText(formatDate(selectedToDate))},
+                    calyear,calmonth,calday)
+                currentDate.set(calyear,calmonth,calday)
+                datePickerDialog.datePicker.minDate=currentDate.timeInMillis
                 datePickerDialog.show()
             }
             timetxt.setOnClickListener {
@@ -87,7 +86,6 @@ class DialogDateTime : AppCompatActivity() {
                         val selectedTime = Calendar.getInstance()
                         selectedTime.set(Calendar.HOUR_OF_DAY, hourOfDay)
                         selectedTime.set(Calendar.MINUTE, minute)
-
                         timetxt.setText(formatTime(selectedTime))
                     },
                     currentTime.get(Calendar.HOUR_OF_DAY),
@@ -117,22 +115,18 @@ class DialogDateTime : AppCompatActivity() {
         }
         return true
     }
-
     private fun showConfirmationDialog() {
         val builder = AlertDialog.Builder(this)
         val dialog = builder.create()
         builder.setTitle("Confirmation")
         builder.setMessage("Are you sure to submit the details?")
         val result = "From Date: ${fromDatetxt.text}\n"+"To Date: ${toDatetxt.text}\n"+"Time: ${timetxt.text}"
-
         val dataTextView: TextView = findViewById(R.id.tvshowdata)
         builder.setPositiveButton("OK") { dialog,_ ->
             dataTextView.text = result
             dialog.dismiss()
             dialogMain.dismiss()
         }
-
-
         builder.setNegativeButton("Cancel") { dialog, _ ->
             dialog.dismiss()
         }

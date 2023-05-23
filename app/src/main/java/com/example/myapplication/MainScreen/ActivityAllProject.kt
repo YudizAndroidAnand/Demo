@@ -8,6 +8,7 @@ import com.example.myapplication.CustomButton.CustomButton
 import com.example.myapplication.Dialog.DialogDateTime
 import com.example.myapplication.Fragment.ActivityFragment
 import com.example.myapplication.Layout.ActivityView
+import com.example.myapplication.Layout.MainActivity
 import com.example.myapplication.Layout.SetLayout
 import com.example.myapplication.Notification.ActivityNotification
 import com.example.myapplication.RecycleView.RecyclerView
