@@ -1,6 +1,4 @@
-package com.example.myapplication
-import FileDownloadWorker
-import android.annotation.SuppressLint
+package com.example.myapplication.workmanager
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -13,6 +11,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.work.*
+import com.example.myapplication.R
 
 class WorkManagerActivity : AppCompatActivity() {
 

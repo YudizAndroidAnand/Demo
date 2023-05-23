@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.example.myapplication.*
 import com.example.myapplication.BroadcastReceiver.BroadcastReceiverTask
+import com.example.myapplication.workmanager.WorkManagerActivity
 
 class ActivityAllProject2 : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")

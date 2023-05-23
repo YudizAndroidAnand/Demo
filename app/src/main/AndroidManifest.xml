@@ -26,12 +26,6 @@
             android:name=".MultithreadingActivity"
             android:exported="false" />
         <activity
-            android:name=".Dialog.DialogBoxBookingMain"
-            android:exported="false" />
-        <activity
-            android:name=".Dialog.DialogBoxBooking"
-            android:exported="false" />
-        <activity
             android:name=".Layout.ActivityLayout"
             android:exported="false" />
         <activity
@@ -108,11 +102,11 @@
         <receiver android:name=".BroadcastReceiver.MyBroadcastReceiver" android:exported="true"/>
 
         <activity
-            android:name=".WorkManagerActivity"
+            android:name=".workmanager.WorkManagerActivity"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".FileDownloadWorker"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".workmanager.FileDownloadWorker"
+            android:exported="false" />
         <activity
             android:name=".SaveFileActivity"
             android:exported="false" />

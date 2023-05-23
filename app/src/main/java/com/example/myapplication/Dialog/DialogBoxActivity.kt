@@ -34,10 +34,9 @@ open class DialogBoxActivity : AppCompatActivity() {
         timeEditText = findViewById(R.id.timeEditText)
         submitButton = findViewById(R.id.submitButton)
 
-        findViewById<Button>(R.id.btnSub).setOnClickListener {
+        //findViewById<Button>(R.id.btnSub).setOnClickListener {
 
-
-        }
+        //}
 
         fromDateEditText.setOnClickListener {
             showDatePickerDialog(true)
