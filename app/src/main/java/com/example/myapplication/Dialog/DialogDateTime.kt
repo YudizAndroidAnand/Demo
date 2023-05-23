@@ -21,19 +21,21 @@ class DialogDateTime : AppCompatActivity() {
     private lateinit var fromDatetxt: EditText
     private lateinit var toDatetxt: EditText
     private lateinit var timetxt: EditText
+    lateinit var dialogMain : Dialog
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dialog_date_time)
+        dialogMain = Dialog(this)
         findViewById<Button>(R.id.btnclickkme).setOnClickListener {
-            val dialog = Dialog(this)
-            val dialogView =  dialog.setContentView(R.layout.activity_dialog_box)
-            fromDatetxt =dialog.findViewById(R.id.fromDateEditText)
-            toDatetxt = dialog.findViewById(R.id.toDateEditText)
-            timetxt = dialog.findViewById(R.id.timeEditText)
-            val submitbtn = dialog.findViewById<Button>(R.id.submitButton)
-            val cancelbtn = dialog.findViewById<Button>(R.id.cancelButton)
-            dialog.show()
+            val dialogView =  dialogMain.setContentView(R.layout.activity_dialog_box)
+            fromDatetxt =dialogMain.findViewById(R.id.fromDateEditText)
+            toDatetxt = dialogMain.findViewById(R.id.toDateEditText)
+            timetxt = dialogMain.findViewById(R.id.timeEditText)
+            val submitbtn = dialogMain.findViewById<Button>(R.id.submitButton)
+            val cancelbtn = dialogMain.findViewById<Button>(R.id.cancelButton)
+            dialogMain.show()
 
             fromDatetxt.setOnClickListener {
                 val currentDate = Calendar.getInstance()
@@ -77,7 +79,6 @@ class DialogDateTime : AppCompatActivity() {
 
                 datePickerDialog.show()
             }
-
             timetxt.setOnClickListener {
                 val currentTime = Calendar.getInstance()
                 val timePickerDialog = TimePickerDialog(
@@ -101,7 +102,7 @@ class DialogDateTime : AppCompatActivity() {
                     showConfirmationDialog()
                 }
             }
-            cancelbtn.setOnClickListener { dialog.dismiss() }
+            cancelbtn.setOnClickListener { dialogMain.dismiss() }
         }
 
     }
@@ -128,7 +129,9 @@ class DialogDateTime : AppCompatActivity() {
         builder.setPositiveButton("OK") { dialog,_ ->
             dataTextView.text = result
             dialog.dismiss()
+            dialogMain.dismiss()
         }
+
 
         builder.setNegativeButton("Cancel") { dialog, _ ->
             dialog.dismiss()

@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.example.myapplication.*
 import com.example.myapplication.BroadcastReceiver.BroadcastReceiverTask
+import com.example.myapplication.MultithreadingTask.MultithreadingFirstTask
 import com.example.myapplication.workmanager.WorkManagerActivity
 
 class ActivityAllProject2 : AppCompatActivity() {
@@ -30,7 +31,7 @@ class ActivityAllProject2 : AppCompatActivity() {
             startActivity(Intent(this, AnimationsActivity::class.java))
         }
         findViewById<Button>(R.id.btn19).setOnClickListener {
-            startActivity(Intent(this,MultithreadingActivity::class.java))
+            startActivity(Intent(this, MultithreadingFirstTask::class.java))
         }
     }
 }

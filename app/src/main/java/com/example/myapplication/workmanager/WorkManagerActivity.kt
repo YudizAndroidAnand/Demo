@@ -23,12 +23,8 @@ class WorkManagerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_work_manager)
         workManager = WorkManager.getInstance(this)
-
         btnOpenFile = findViewById(R.id.btn1)
         btnStartDownload = findViewById(R.id.btn2)
-
-
-
         btnStartDownload.setOnClickListener {
             startDownloadingFile()
             btnOpenFile.visibility = View.GONE

@@ -10,20 +10,20 @@
             android:id="@+id/tvdialog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" Dialog Box"
+            android:text=" Dialog Box (Data,Time)"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="25dp"
-            android:textSize="20sp"
+            android:textSize="30sp"
             android:textStyle="bold"/>
         <Button
             android:id="@+id/btnclickkme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Click me"
-            android:layout_marginTop="10dp"
+            android:text="open dialog box"
             app:layout_constraintTop_toBottomOf="@id/tvdialog"
+            android:layout_marginTop="100dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
         <TextView
@@ -33,7 +33,6 @@
             app:layout_constraintTop_toBottomOf="@id/btnclickkme"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="30dp"
-            android:text="Data"
             android:textStyle="bold"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
