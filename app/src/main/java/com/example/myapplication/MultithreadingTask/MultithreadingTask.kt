@@ -17,7 +17,7 @@ class MultithreadingTask : AppCompatActivity() {
             startActivity(Intent(this,MultithreadingSecondTask::class.java))
         }
         findViewById<Button>(R.id.buttonTask3).setOnClickListener {
-            startActivity(Intent(this,MultithreadingFirstTask::class.java))
+            startActivity(Intent(this,Multithreadingthired::class.java))
         }
         findViewById<Button>(R.id.buttonTask4).setOnClickListener {
             startActivity(Intent(this,MultithreadingFirstTask::class.java))

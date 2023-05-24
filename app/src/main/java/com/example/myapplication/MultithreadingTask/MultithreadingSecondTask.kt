@@ -1,51 +1,38 @@
 package com.example.myapplication.MultithreadingTask
 
-import androidx.appcompat.app.AppCompatActivity
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.Handler
+import android.util.Log
+import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
 
 class MultithreadingSecondTask : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_multithreading_second_task)
-        val textFirst: TextView = findViewById(R.id.textview_first_number)
-        val textSecond: TextView = findViewById(R.id.textview_second_number)
-        val number = 50
-        val num = 10
-
-        val thread: Thread = object : Thread() {
-            override fun run() {
-               try {
-                   runOnUiThread {
-                        val result = number + num
-                       textFirst.text = result.toString()
-                   }
-               }
-               catch (e: InterruptedException){
-
-               }
+        val textViewResultFirst : TextView = findViewById(R.id.textview_number)
+        val textViewResultSecond : TextView = findViewById(R.id.textview_number1)
+        val number = 10
+        val number2 = 20
+        val handler = Handler()
+        Thread {
+            val result = number + number2
+            handler.post {
+                textViewResultFirst.text = result.toString()
             }
-        }
-        thread.start()
-        for (i in 1..10000){
-            val threadOther: Thread = object : Thread() {
-                override fun run() {
-                    try {Thread.sleep(2000)
-                        runOnUiThread {
-//                        val newResult = 110 + num
-//                        textSecond.text = newResult.toString()
-                            textSecond.text = i.toString()
-                        }
-                    }
-                    catch (e: InterruptedException){
-                    }
+            Thread {
+                handler.post {
+                    val res = result * number2
+                    textViewResultSecond.text = res.toString()
                 }
-            }
-            threadOther.start()
-        }
+            }.start()
+        }.start()
     }
 }
+
 
 
 

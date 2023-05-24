@@ -5,11 +5,11 @@
     <string name="selected_item">Selected item:</string>
 
     <string-array name="Languages">
-    <item>Java</item>
-    <item>Kotlin</item>
-    <item>Swift</item>
-    <item>Python</item>
-    <item>c</item>
-    <item>c++</item>
+        <item>Java</item>
+        <item>Kotlin</item>
+        <item>Swift</item>
+        <item>Python</item>
+        <item>c</item>
+        <item>c++</item>
     </string-array>
 </resources>
