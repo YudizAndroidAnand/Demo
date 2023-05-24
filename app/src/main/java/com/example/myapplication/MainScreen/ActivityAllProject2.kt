@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.example.myapplication.*
 import com.example.myapplication.BroadcastReceiver.BroadcastReceiverTask
+import com.example.myapplication.DamoProject.MainRoomDatabaseActivity
 import com.example.myapplication.SaveFileActivity
 import com.example.myapplication.MultithreadingTask.MultithreadingFirstTask
 import com.example.myapplication.MultithreadingTask.MultithreadingTask
@@ -34,6 +35,9 @@ class ActivityAllProject2 : AppCompatActivity() {
         }
         findViewById<Button>(R.id.btn19).setOnClickListener {
             startActivity(Intent(this, MultithreadingTask::class.java))
+        }
+        findViewById<Button>(R.id.btn20).setOnClickListener {
+            startActivity(Intent(this, MainRoomDatabaseActivity::class.java))
         }
     }
 }

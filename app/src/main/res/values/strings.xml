@@ -3,6 +3,15 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="selected_item">Selected item:</string>
+    <string name="text_login">Log In</string>
+    <string name="text_email">Email</string>
+    <string name="text_password">Password</string>
+    <string name="text_do_not_acc">Don\'t have an account?</string>
+    <string name="text_create_sign_up">Sign Up</string>
+    <string name="text_create_acc">Create Account</string>
+    <string name="text_already_acc">Have an account?</string>
+    <string name="text_back_to_login">Log in</string>
+
 
     <string-array name="Languages">
         <item>Java</item>
@@ -12,4 +21,12 @@
         <item>c</item>
         <item>c++</item>
     </string-array>
+    <string name="title_activity_frist">FristActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+
 </resources>

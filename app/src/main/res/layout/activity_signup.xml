@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DemoProject.SignupActivity">
+    <TextView
+        android:id="@+id/textview_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_create_sign_up"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"/>
+
+
+    <EditText
+        android:id="@+id/edittext_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/edittext_height"
+        android:textColor="@color/black"
+        android:hint="Enter Your Full Name"
+        android:layout_marginHorizontal="@dimen/edittext_horizontal"
+        android:background="@drawable/shapes_login"
+        app:layout_constraintTop_toBottomOf="@+id/textview_signup"
+        android:layout_marginTop="100dp"/>
+    <EditText
+        android:id="@+id/edittext_email"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/edittext_height"
+        android:textColor="@color/black"
+        android:hint="Enter Your E-mail"
+        android:layout_marginHorizontal="@dimen/edittext_horizontal"
+        android:background="@drawable/shapes_login"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_name"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:id="@+id/edittext_mobile_number"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/edittext_height"
+        android:textColor="@color/black"
+        android:hint="Enter Your Mobile Number"
+        android:layout_marginHorizontal="@dimen/edittext_horizontal"
+        android:background="@drawable/shapes_login"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_email"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:id="@+id/edittext_password"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/edittext_height"
+        android:textColor="@color/black"
+        android:hint="Create Your Password"
+        android:layout_marginHorizontal="@dimen/edittext_horizontal"
+        android:background="@drawable/shapes_login"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_mobile_number"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:id="@+id/edittext_confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/edittext_height"
+        android:textColor="@color/black"
+        android:hint="Enter Confirm Password"
+        android:layout_marginHorizontal="@dimen/edittext_horizontal"
+        android:background="@drawable/shapes_login"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_password"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/edittext_height"
+        android:text="Sign up"/>
+
+    <TextView
+        android:id="@+id/textview_already_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_already_acc"
+        app:layout_constraintTop_toBottomOf="@id/edittext_confirm_password"
+        android:textSize="@dimen/textview_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="40sp"/>
+    <TextView
+        android:id="@+id/textview_back_to_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_back_to_login"
+        android:textSize="@dimen/textview_size"
+        android:textColor="@color/purple_700"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_confirm_password"
+        app:layout_constraintStart_toEndOf="@+id/textview_already_acc"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
