@@ -1,6 +1,5 @@
 package com.example.myapplication.MultithreadingTask
 
-import android.content.Context
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.myapplication.R
 
-class Multithreadingthired : AppCompatActivity() {
+class MultithreadingThirdTask : AppCompatActivity() {
     private lateinit var counterTextView: TextView
     private lateinit var startButton: Button
     private var task: CounterTask? = null
