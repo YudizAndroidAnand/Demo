@@ -68,16 +68,21 @@
         app:layout_constraintTop_toBottomOf="@+id/edittext_password"
         android:layout_marginTop="10dp"/>
     <Button
+        android:id="@+id/button_Signup"
         android:layout_width="match_parent"
         android:layout_height="@dimen/edittext_height"
-        android:text="Sign up"/>
+        android:text="Sign up"
+        android:backgroundTint="@color/lite_blue"
+        android:layout_marginHorizontal="@dimen/edittext_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_confirm_password"
+        android:layout_marginTop="50dp"/>
 
     <TextView
         android:id="@+id/textview_already_acc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_already_acc"
-        app:layout_constraintTop_toBottomOf="@id/edittext_confirm_password"
+        app:layout_constraintTop_toBottomOf="@id/button_Signup"
         android:textSize="@dimen/textview_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,7 +95,7 @@
         android:text="@string/text_back_to_login"
         android:textSize="@dimen/textview_size"
         android:textColor="@color/purple_700"
-        app:layout_constraintTop_toBottomOf="@+id/edittext_confirm_password"
+        app:layout_constraintTop_toBottomOf="@+id/button_Signup"
         app:layout_constraintStart_toEndOf="@+id/textview_already_acc"
         android:layout_marginStart="8dp"
         android:layout_marginTop="50dp"/>

@@ -7,13 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#F8F6F6</color>
-    <color name="green">#0A9F6A</color>
+    <color name="greeen">#0A9F6A</color>
     <color name="pink">#EDB0EF</color>
     <color name="yellow">#979730</color>
     <color name="pink_lite">#EFD6F3</color>
     <color name="red">#D50000</color>
     <color name="abc">@color/yellow</color>
     <color name="greay">#CDC7C7</color>
+    <color name="lite_pink">#EDB0EF</color>
+    <color name="myclr">#EDB0EF</color>
     <color name="lite_blue">#5D5D66</color>
 
 </resources>

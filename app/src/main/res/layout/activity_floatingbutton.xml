@@ -28,7 +28,6 @@
         app:icon="@drawable/ic_add"
         android:textColor="@color/red"
         app:iconTint="@color/red"
-        android:backgroundTint="@color/myclr"
         android:text="Add"
         >
 

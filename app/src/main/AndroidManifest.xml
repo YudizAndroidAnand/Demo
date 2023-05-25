@@ -22,16 +22,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".SignupActivity"
+            android:name=".DemoProject.HomeScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".FirstScreenActivity"
+            android:name=".DemoProject.SignupActivity"
             android:exported="false" />
         <activity
-            android:name=".FristActivity"
-            android:exported="false"
-            android:label="@string/title_activity_frist"
-            android:theme="@style/Theme.MyApplication.NoActionBar" />
+            android:name=".DemoProject.LoginActivity"
+            android:exported="false" />
         <activity
             android:name=".DemoProject.MainRoomDatabaseActivity"
             android:exported="false" />
@@ -127,7 +125,8 @@
 
         <receiver
             android:name=".BroadcastReceiver.MyBroadcastReceiver"
-            android:exported="true" />
+            android:exported="true"
+            tools:ignore="ExportedReceiver" />
 
         <activity
             android:name=".workmanager.WorkManagerActivity"

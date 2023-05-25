@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DemoProject.FirstScreenActivity">
+    tools:context=".DemoProject.LoginActivity">
 
     <TextView
         android:id="@+id/textview_login"
@@ -60,7 +60,7 @@
         app:layout_constraintHorizontal_bias=".4"
         app:layout_constraintStart_toStartOf="@id/button_login"
         app:layout_constraintEnd_toEndOf="@id/button_login"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="30dp" />
     <TextView
         android:id="@+id/textview_signup"
         android:layout_width="wrap_content"
@@ -71,6 +71,6 @@
         android:layout_marginStart="8dp"
         app:layout_constraintTop_toBottomOf="@id/button_login"
         app:layout_constraintStart_toEndOf="@+id/textview_create_acc"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="30dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

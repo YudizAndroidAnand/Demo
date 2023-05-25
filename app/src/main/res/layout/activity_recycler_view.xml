@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RecycleView.RecyclerView"
-    android:background="@color/myclr">
+    android:background="@color/pink_lite">
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -15,11 +15,7 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="50dp"
-        android:background="@color/myclr"
-        >
-
-
-    </androidx.recyclerview.widget.RecyclerView>
+        android:background="@color/pink_lite"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,10 +24,8 @@
         android:textStyle="bold"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="20dp"
-        >
-
-    </TextView>
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp"/>
 
     <Button
         android:id="@+id/alldeletebtn"

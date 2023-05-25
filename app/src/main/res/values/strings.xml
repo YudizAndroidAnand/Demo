@@ -11,6 +11,7 @@
     <string name="text_create_acc">Create Account</string>
     <string name="text_already_acc">Have an account?</string>
     <string name="text_back_to_login">Log in</string>
+    <string name="text_hello">Hello </string>
 
 
     <string-array name="Languages">
