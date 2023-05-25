@@ -3,12 +3,11 @@ package com.example.myapplication
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 
-class FloatingButton : AppCompatActivity() {
+class FloatingButtonActivity : AppCompatActivity() {
 
 //    lateinit var   floatbtn : FloatingActionButton
 //    lateinit var extfloatbnt : ExtendedFloatingActionButton

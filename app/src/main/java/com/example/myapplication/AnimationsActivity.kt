@@ -19,6 +19,7 @@ class AnimationsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_animations)
         val imageview : ImageView = findViewById(R.id.imageviewGooglePic)
+        val imageviewOther : ImageView = findViewById(R.id.imageviewGooglePic2)
 
         findViewById<Button>(R.id.btnBlink).setOnClickListener {
             val animation = AnimationUtils.loadAnimation(this,R.anim.blink)
@@ -47,14 +48,14 @@ class AnimationsActivity : AppCompatActivity() {
             animator.start()
         }
         findViewById<Button>(R.id.btnSingle).setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this,TestActivity::class.java)
             val option = ActivityOptions.makeSceneTransitionAnimation(this,imageview,"traName")
             startActivity(intent,option.toBundle())
         }
 
         findViewById<Button>(R.id.btnPair).setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            val option = ActivityOptions.makeSceneTransitionAnimation(this, Pair(imageview,"traName"))
+            val intent = Intent(this, TestActivity::class.java)
+            val option = ActivityOptions.makeSceneTransitionAnimation(this, Pair(imageview,"traName"),Pair(imageviewOther,"traNameSecond"))
             startActivity(intent,option.toBundle())
         }
     }

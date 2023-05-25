@@ -15,7 +15,7 @@ class MainRoomDatabaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_room_database)
 
-        database = ContactDatabase.getDatabase(this)
-        database.contactDao().insertContact(Contact(0,"title","des"))
+        //database = ContactDatabase.getDatabase(this)
+        //database.contactDao().insertContact(Contact(0,"title","des"))
     }
 }

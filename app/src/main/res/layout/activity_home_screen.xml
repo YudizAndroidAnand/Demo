@@ -11,10 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_hello"
-        android:textSize="@dimen/textview_size"
+        android:textSize="20sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="28dp"/>
+        android:layout_margin="20dp"/>
     <Button
         android:id="@+id/button_logout"
         android:layout_width="80dp"
@@ -29,7 +29,7 @@
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="60dp"/>
         <com.google.android.material.floatingactionbutton.FloatingActionButton

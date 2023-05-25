@@ -22,6 +22,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".TestActivity"
+            android:exported="false" />
+        <activity
             android:name=".DemoProject.HomeScreenActivity"
             android:exported="false" />
         <activity
@@ -67,7 +70,7 @@
             android:name=".RecycleView.RecyclerView"
             android:exported="false" />
         <activity
-            android:name=".FloatingButton"
+            android:name=".FloatingButtonActivity"
             android:exported="false" />
         <activity
             android:name=".ActivityRuntimePermission"

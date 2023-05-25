@@ -14,12 +14,10 @@ abstract  class ContactDatabase : RoomDatabase() {
         private var INSTANCE : ContactDatabase? = null
         fun getDatabase(context: Context) : ContactDatabase{
             if(INSTANCE == null){
-                synchronized(this){
                     INSTANCE = Room.databaseBuilder(
                         context.applicationContext,
                         ContactDatabase::class.java,
                         "contact.db").build()
-                }
             }
             return INSTANCE!!
         }

@@ -10,12 +10,20 @@
         android:id="@+id/imageviewGooglePic"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="100dp"
+        android:layout_margin="20dp"
         android:transitionName="traName"
         android:background="@drawable/ic_googlepic"/>
+    <ImageView
+        android:id="@+id/imageviewGooglePic2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:transitionName="traNameSecond"
+        android:background="@drawable/ic_googlepic"
+        android:layout_margin="20dp"/>
     <Button
         android:id="@+id/btnBlink"
         android:layout_width="300dp"

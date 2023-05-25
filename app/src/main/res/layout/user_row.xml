@@ -7,12 +7,7 @@
     app:cardCornerRadius="10dp"
     android:orientation="horizontal"
     android:elevation="5dp"
-    android:layout_margin="6dp"
-
-
-
-    >
-
+    android:layout_margin="6dp">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

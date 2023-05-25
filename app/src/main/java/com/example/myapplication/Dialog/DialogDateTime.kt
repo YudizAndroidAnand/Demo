@@ -35,7 +35,7 @@ class DialogDateTime : AppCompatActivity() {
         setContentView(R.layout.activity_dialog_date_time)
         dialogMain = Dialog(this)
         findViewById<Button>(R.id.btnclickkme).setOnClickListener {
-            //val dialogView =  dialogMain.setContentView(R.layout.activity_dialog_box)
+            val dialogView =  dialogMain.setContentView(R.layout.activity_dialog_box)
             fromDatetxt =dialogMain.findViewById(R.id.fromDateEditText)
             toDatetxt = dialogMain.findViewById(R.id.toDateEditText)
             timetxt = dialogMain.findViewById(R.id.timeEditText)

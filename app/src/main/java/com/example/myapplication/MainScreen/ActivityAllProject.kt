@@ -37,7 +37,7 @@ class ActivityAllProject : AppCompatActivity() {
             startActivity(Intent(this, RecyclerView::class.java))
         }
         findViewById<Button>(R.id.btn8).setOnClickListener {
-            startActivity(Intent(this, FloatingButton::class.java))
+            startActivity(Intent(this, FloatingButtonActivity::class.java))
         }
         findViewById<Button>(R.id.btn9).setOnClickListener {
             startActivity(Intent(this, ActivityRuntimePermission::class.java))
