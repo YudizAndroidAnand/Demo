@@ -35,6 +35,7 @@ class LoginActivity : AppCompatActivity() {
         }
         else{
             startActivity(Intent(this,HomeScreenActivity::class.java))
+
         }
     }
 }

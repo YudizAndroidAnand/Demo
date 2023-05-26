@@ -8,9 +8,7 @@ import android.widget.Button
 import com.example.myapplication.*
 import com.example.myapplication.BroadcastReceiver.BroadcastReceiverTask
 import com.example.myapplication.DemoProject.LoginActivity
-import com.example.myapplication.DemoProject.MainRoomDatabaseActivity
 import com.example.myapplication.SaveFileActivity
-import com.example.myapplication.MultithreadingTask.MultithreadingFirstTask
 import com.example.myapplication.MultithreadingTask.MultithreadingTask
 import com.example.myapplication.workmanager.WorkManagerActivity
 

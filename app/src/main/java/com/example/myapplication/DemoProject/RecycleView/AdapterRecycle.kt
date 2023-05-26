@@ -1,4 +1,4 @@
-package com.example.myapplication.DemoProject
+package com.example.myapplication.DemoProject.RecycleView
 import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,20 +6,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.DemoProject.TaskTable.Contact
 import com.example.myapplication.R
 
-class AdapterRecycle(val context: Context, private var userlist: MutableList<UserDataRecycle>):RecyclerView.Adapter<AdapterRecycle.MyViewHolder>() {
+class AdapterRecycle(val context: Context, private var userlist: MutableList<Contact>):RecyclerView.Adapter<AdapterRecycle.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.user_row_recycle, parent, false)
         return MyViewHolder(itemView)
     }
     override fun getItemCount(): Int {
-        return userlist.size
+        return userlist.count()
     }
     @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val currentposition = userlist[position]
+        val currentposition = userlist.get(position)
         holder.titleName.text = currentposition.title
         holder.descriptionName.text = currentposition.description
     }

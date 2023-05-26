@@ -3,16 +3,19 @@ package com.example.myapplication.DemoProject
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
+import androidx.room.Room
+import com.example.myapplication.DemoProject.TaskTable.ContactDatabase
+import com.example.myapplication.DemoProject.UserDataTable.UserDatabase
 import com.example.myapplication.R
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class SignupActivity : AppCompatActivity() {
 
-    lateinit var database : ContactDatabase
+    lateinit var databaseuser : ContactDatabase
     lateinit var fullname : EditText
     lateinit var mail : EditText
     lateinit var mobilenumber : EditText
@@ -34,6 +37,10 @@ class SignupActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.button_Signup).setOnClickListener {
             validation()
+            databaseuser = Room.databaseBuilder(applicationContext, UserDatabase::class.java,"UserData").build()
+            GlobalScope.launch {
+                databaseuser.
+           }
         }
     }
     fun validation(){
@@ -68,8 +75,6 @@ class SignupActivity : AppCompatActivity() {
             confirmpassword.error = "Enter valid Password"
         }
         else{
-            database = ContactDatabase.getDatabase(this)
-            database.contactDao().insertContact(Contact(0,fullname.text.toString(),mail.text.toString(),mobilenumber.text.toString(),password.text.toString()))
             startActivity(Intent(this,LoginActivity::class.java))
         }
     }

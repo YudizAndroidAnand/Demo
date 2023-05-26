@@ -9,9 +9,9 @@
     <string name="text_do_not_acc">Don\'t have an account?</string>
     <string name="text_create_sign_up">Sign Up</string>
     <string name="text_create_acc">Create Account</string>
-    <string name="text_already_acc">Have an account?</string>
+    <string name="text_already_acc">Already have an account?</string>
     <string name="text_back_to_login">Log in</string>
-    <string name="text_hello">Hello </string>
+    <string name="text_hello">Hello sir Welcome</string>
 
 
     <string-array name="Languages">
