@@ -20,4 +20,7 @@ interface UserDAO {
     @Query("SELECT * FROM UserData")
     suspend fun getUserData() : List<UserSignupData>
 
+    @Query("SELECT * FORM contact WHERE email = :email")
+    suspend fun getEmail(email:String) : List<UserSignupData>
+
 }

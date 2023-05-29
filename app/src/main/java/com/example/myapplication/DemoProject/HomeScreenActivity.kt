@@ -49,8 +49,6 @@ class HomeScreenActivity : AppCompatActivity() {
             val myadapter = AdapterRecycle(this, list as MutableList<Contact>)
             newrecyclerView.adapter = myadapter
         }
-//        val list = database.contactDao().getContact().toMutableList()
-
     }
 
 

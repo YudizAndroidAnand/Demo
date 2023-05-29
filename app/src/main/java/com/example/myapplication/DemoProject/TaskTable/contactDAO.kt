@@ -20,4 +20,7 @@ interface ContactDAO {
 
     @Query("SELECT * FROM contact")
      fun getContact() : List<Contact>
+
+//     @Query("SELECT * FORM CONTACT WHERE email = :email")
+//     fun getId() : String
 }
