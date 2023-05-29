@@ -37,7 +37,7 @@ class AdapterRecycle(val context: CoroutineScope, private var userlist: MutableL
         holder.descriptionName.text = currentposition.description
         holder.deletebutton.setOnClickListener {
             GlobalScope.launch{
-                database.contactDao().deleteContact(Contact(userlist[currentposition]))
+               // database.contactDao().deleteContact(userlist[position])
             }
         }
 
