@@ -7,9 +7,14 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.myapplication.DemoProject.TaskTable.ContactDatabase
+import com.example.myapplication.DemoProject.UserDataTable.UserDatabase
+import com.example.myapplication.DemoProject.UserDataTable.UserSignupData
 import com.example.myapplication.R
 
 class LoginActivity : AppCompatActivity() {
+    private lateinit var database : UserDatabase
+
     lateinit var useremail : EditText
     lateinit var userpassword : EditText
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,16 +31,20 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this,SignupActivity::class.java))
         }
     }
-    private fun validation(){
+    private  fun validation(){
+       // val list = database.userDao().getUserData()
+
         if (useremail.text.isEmpty()){
             Toast.makeText(this, "Enter your Email", Toast.LENGTH_SHORT).show()
         }
         else if (userpassword.text.isEmpty()){
             Toast.makeText(this, "Enter your Password", Toast.LENGTH_SHORT).show()
         }
+//        else if(UserSignupData() in list) {
+//            startActivity(Intent(this,HomeScreenActivity::class.java))
+//        }
         else{
             startActivity(Intent(this,HomeScreenActivity::class.java))
-
         }
     }
 }

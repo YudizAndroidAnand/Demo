@@ -6,7 +6,8 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "UserData")
 data class UserSignupData(
     @PrimaryKey(autoGenerate = true )
+    val id : Int,
     val name : String,
     val email : String,
-    val mobileNumber : Long,
+    val mobileNumber : String,
     val password : String)

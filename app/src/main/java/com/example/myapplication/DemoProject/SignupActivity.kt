@@ -1,21 +1,25 @@
 package com.example.myapplication.DemoProject
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.room.Room
-import com.example.myapplication.DemoProject.TaskTable.ContactDatabase
+import androidx.security.crypto.EncryptedSharedPreferences
+import androidx.security.crypto.MasterKeys
 import com.example.myapplication.DemoProject.UserDataTable.UserDatabase
+import com.example.myapplication.DemoProject.UserDataTable.UserSignupData
 import com.example.myapplication.R
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
+@Suppress("DEPRECATION")
 class SignupActivity : AppCompatActivity() {
 
-    lateinit var databaseuser : ContactDatabase
+    private lateinit var databaseuser : UserDatabase
     lateinit var fullname : EditText
     lateinit var mail : EditText
     lateinit var mobilenumber : EditText
@@ -34,14 +38,18 @@ class SignupActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.textview_back_to_login).setOnClickListener {
             startActivity(Intent(this,LoginActivity::class.java))
         }
-
         findViewById<Button>(R.id.button_Signup).setOnClickListener {
             validation()
-            databaseuser = Room.databaseBuilder(applicationContext, UserDatabase::class.java,"UserData").build()
-            GlobalScope.launch {
-                databaseuser.
-           }
         }
+    }
+    private fun getEncryptedSharedPrefs(): SharedPreferences {
+        val masterKeyAlias = MasterKeys.getOrCreate(MasterKeys.AES256_GCM_SPEC)
+        return EncryptedSharedPreferences.create(
+            "secured_prefs",
+            masterKeyAlias,
+            this,
+            EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+            EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM)
     }
     fun validation(){
         if (fullname.text.isEmpty()){
@@ -75,6 +83,16 @@ class SignupActivity : AppCompatActivity() {
             confirmpassword.error = "Enter valid Password"
         }
         else{
+            databaseuser = Room.databaseBuilder(applicationContext, UserDatabase::class.java,"UserData").build()
+            GlobalScope.launch {
+                databaseuser.userDao().insertUserData(UserSignupData(0,fullname.text.toString(),mail.text.toString(),mobilenumber.text.toString(),password.text.toString()))
+            }
+            getEncryptedSharedPrefs().edit()
+                .putString("name",fullname.text.toString())
+                .putString("mail",mail.text.toString())
+                .putString("mobilenumber",mobilenumber.text.toString())
+                .putString("password",password.text.toString())
+                .apply()
             startActivity(Intent(this,LoginActivity::class.java))
         }
     }

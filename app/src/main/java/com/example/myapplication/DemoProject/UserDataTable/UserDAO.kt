@@ -1,21 +1,23 @@
 package com.example.myapplication.DemoProject.UserDataTable
 
 import androidx.room.*
+import com.example.myapplication.DemoProject.TaskTable.Contact
 
 @Dao
 interface UserDAO {
 
     @Insert
-    suspend fun insertContact(userData: UserSignupData)
+    suspend fun insertUserData(userData: UserSignupData)
 
     @Update
-    suspend fun updateContact(userData: UserSignupData)
+    suspend fun updateUserData(userData: UserSignupData)
 
 
     @Delete
-    suspend fun deleteContact(userData: UserSignupData)
+    suspend fun deleteUserData(userData: UserSignupData)
 
 
-    @Query("SELECT * FROM contact")
-    fun getContact() : List<UserSignupData>
+    @Query("SELECT * FROM UserData")
+    suspend fun getUserData() : List<UserSignupData>
+
 }

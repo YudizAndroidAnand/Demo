@@ -16,6 +16,7 @@ import com.example.myapplication.DemoProject.TaskTable.Contact
 import com.example.myapplication.DemoProject.TaskTable.ContactDatabase
 import com.example.myapplication.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -24,13 +25,13 @@ class HomeScreenActivity : AppCompatActivity() {
 
     private lateinit var database : ContactDatabase
     private lateinit var newrecyclerView: RecyclerView
-    private lateinit var list: MutableList<Contact>
     lateinit var dialogMain : Dialog
     lateinit var titleName : EditText
     lateinit var descriptionName : EditText
     lateinit var cancelButton : Button
     lateinit var addButton : Button
 
+    @OptIn(DelicateCoroutinesApi::class)
     override  fun onCreate(savedInstanceState: Bundle?) {
         database = Room.databaseBuilder(applicationContext, ContactDatabase::class.java,"contact").build()
         super.onCreate(savedInstanceState)
@@ -42,13 +43,14 @@ class HomeScreenActivity : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.floating_button_add_task).setOnClickListener{
             addTaskDialogBox()
         }
-//        GlobalScope.launch {
-//             list = database.contactDao().getContact() as MutableList<Contact>
-//        }
-        list = database.contactDao().getContact().toMutableList()
-        newrecyclerView = findViewById(R.id.recyclerview)
-        val myadapter = AdapterRecycle(this,list)
-        newrecyclerView.adapter = myadapter
+        GlobalScope.launch {
+             val list = database.contactDao().getContact()
+            newrecyclerView = findViewById(R.id.recyclerview)
+            val myadapter = AdapterRecycle(this, list as MutableList<Contact>)
+            newrecyclerView.adapter = myadapter
+        }
+//        val list = database.contactDao().getContact().toMutableList()
+
     }
 
 
