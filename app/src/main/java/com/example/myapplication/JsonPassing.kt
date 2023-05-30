@@ -1,23 +1,20 @@
 package com.example.myapplication
 
+import org.json.JSONArray
+
 data class JsonPassing(
-    val id : Int = 0,
-    val name : String = "",
-    val username : String = "",
-    val email : String = "",
-    val address : String = "",
-    val phone : String = "",
-    val website : String = "",
-)
-data class Address(val street : String = "",
-                   val suite : String = "",
-                   val city : String = "",
-                   val zipcode : String = "",
-                   val geo : String = "")
-data class Geo(val lat : String = "",
-               val lng : String = "",
-               val company : String = "",)
-data class Company(val name : String = "",
-                   val catchPhrase : String = "",
-                   val bs : String = "",)
+    var id: Int,
+    var title: String,
+    var body: String,
+    var userId: Int,
+    var tags: JSONArray,
+    var reactions: Int,
+    var geo : Geo) {
+    override fun toString(): String {
+        return "Post(id=$id, title='$title', body='$body', userId=$userId, tags=$tags, reactions=$reactions, geo=$geo)"
+    }
+}
+data class Geo(val lat : Double ,val lng : Double){
+}
+
 
