@@ -2,6 +2,7 @@ package com.example.myapplication
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.google.gson.Gson
 import org.json.JSONObject
 
 
@@ -10,11 +11,11 @@ class JsonPassingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_json_passing)
         val jsonString = "{\"id\":1," +
-                "\"title\":\"His mother had always taught him\"," +
-                "\"body\":\"He never looked down on those who were less fortunate or who had less money than him. But the stupidity of the group of people he was talking to made him change his mind.\"," +
+                "\"title\":\"my company name is yudiz\"," +
+                "\"body\":\".\"," +
                 "\"userId\":9," +
-                "\"tags\":[\"history\",\"american\",\"crime\"]," +
-                "\"reactions\":2," +
+                "\"country\":[\"india\",\"america\",\"japan\"]," +
+                "\"number\":2," +
                 "\"geo\": {\n" +
                 " \"lat\": \"-37.3159\",\n" +
                 " \"lng\": \"81.1496\"\n" +
@@ -24,11 +25,15 @@ class JsonPassingActivity : AppCompatActivity() {
         val title = jsonObject.getString("title")
         val body = jsonObject.getString("body")
         val userId = jsonObject.getInt("userId")
-        val tags = jsonObject.getJSONArray("tags")
-        val reactions = jsonObject.getInt("reactions")
+        val tags = jsonObject.getJSONArray("country")
+        val reactions = jsonObject.getInt("number")
         val geoLat = jsonObject.getJSONObject("geo").getDouble("lat")
         val geoLng = jsonObject.getJSONObject("geo").getDouble("lng")
-        val result = "$id/n $title/n $body/n $userId/n $tags/n $reactions/n $geoLat/n $geoLng"
+        val result = "$id\n $title\n $body\n $userId\n $tags\n $reactions\n $geoLat\n $geoLng"
         print(result)
+        val gson = Gson()
+        val deserialize : JsonData = gson.fromJson(jsonString,JsonData::class.java)
+        val serialize : String = gson.toJson(JsonData::class.java)
+
     }
 }

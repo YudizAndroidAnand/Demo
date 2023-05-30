@@ -41,5 +41,8 @@ class ActivityAllProject2 : AppCompatActivity() {
         findViewById<Button>(R.id.btn21).setOnClickListener {
             startActivity(Intent(this, JsonPassingActivity::class.java))
         }
+        findViewById<Button>(R.id.btn22).setOnClickListener {
+            startActivity(Intent(this, MapActivity::class.java))
+        }
     }
 }
