@@ -46,9 +46,14 @@ android {
 
 dependencies {
 
+    implementation 'com.google.android.gms:play-services-analytics-impl:18.0.2'
     def work_version = "2.8.1"
     def room_version = "2.5.1"
 
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.google.android.gms:play-services-location:21.0.1'
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'

@@ -10,7 +10,7 @@ import com.example.myapplication.R
 class RecyclerView : AppCompatActivity() {
 
     private lateinit var newrecyclerView: RecyclerView
-    private lateinit var newlist: MutableList<userdata>
+    private lateinit var newlist: MutableList<Userdata>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,24 +19,24 @@ class RecyclerView : AppCompatActivity() {
         newrecyclerView = findViewById(R.id.recyclerview)
 
         newlist = mutableListOf(
-            userdata("anand", "7600740075", "anand@gmail.com",false),
-            userdata("anand1", "7600740075", "anand@gmail.com",false),
-            userdata("anand2", "7600740075", "anand@gmail.com",false),
-            userdata("anand3", "7600740075", "anand@gmail.com",false),
-            userdata("anand4", "7600740075", "anand@gmail.com",false),
-            userdata("anand5", "7600740075", "anand@gmail.com",false),
-            userdata("anand6", "7600740075", "anand@gmail.com",false),
-            userdata("anand7", "7600740075", "anand@gmail.com",false),
-            userdata("anand8", "7600740075", "anand@gmail.com",false),
-            userdata("anand9", "7600740075", "anand@gmail.com",false),
-            userdata("anand10", "7600740075", "anand@gmail.com",false),
-            userdata("anand11", "7600740075", "anand@gmail.com",false),
-            userdata("anand12", "7600740075", "anand@gmail.com",false),
-            userdata("anand13", "7600740075", "anand@gmail.com",false),
-            userdata("anand14", "7600740075", "anand@gmail.com",false),
-            userdata("anand15", "7600740075", "anand@gmail.com",false),
-            userdata("anand16", "7600740075", "anand@gmail.com",false),
-            userdata("anand17", "7600740075", "anand@gmail.com",false)
+            Userdata("anand", "7600740075", "anand@gmail.com",false),
+            Userdata("anand1", "7600740075", "anand@gmail.com",false),
+            Userdata("anand2", "7600740075", "anand@gmail.com",false),
+            Userdata("anand3", "7600740075", "anand@gmail.com",false),
+            Userdata("anand4", "7600740075", "anand@gmail.com",false),
+            Userdata("anand5", "7600740075", "anand@gmail.com",false),
+            Userdata("anand6", "7600740075", "anand@gmail.com",false),
+            Userdata("anand7", "7600740075", "anand@gmail.com",false),
+            Userdata("anand8", "7600740075", "anand@gmail.com",false),
+            Userdata("anand9", "7600740075", "anand@gmail.com",false),
+            Userdata("anand10", "7600740075", "anand@gmail.com",false),
+            Userdata("anand11", "7600740075", "anand@gmail.com",false),
+            Userdata("anand12", "7600740075", "anand@gmail.com",false),
+            Userdata("anand13", "7600740075", "anand@gmail.com",false),
+            Userdata("anand14", "7600740075", "anand@gmail.com",false),
+            Userdata("anand15", "7600740075", "anand@gmail.com",false),
+            Userdata("anand16", "7600740075", "anand@gmail.com",false),
+            Userdata("anand17", "7600740075", "anand@gmail.com",false)
         )
 
         val alldeletebutton: Button = findViewById(R.id.alldeletebtn)

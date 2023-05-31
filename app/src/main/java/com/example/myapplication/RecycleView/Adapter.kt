@@ -8,9 +8,10 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.Json.retrofit.ProductData
 import com.example.myapplication.R
 
-class Adapter(val context: Context, private var userlist: MutableList<userdata>):RecyclerView.Adapter<Adapter.MyViewHolder>() {
+class Adapter(val context: Context, private var userlist: MutableList<Userdata>):RecyclerView.Adapter<Adapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.user_row, parent, false)
@@ -35,7 +36,7 @@ class Adapter(val context: Context, private var userlist: MutableList<userdata>)
         }
         holder.checkboxbtn.setOnClickListener{
             userlist.set(position,
-                userdata(currentposition.name,currentposition.mobilenumber,currentposition.email,true)
+                Userdata(currentposition.name,currentposition.mobilenumber,currentposition.email,true)
             )
             notifyItemChanged(position)
         }

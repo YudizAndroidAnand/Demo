@@ -8,6 +8,8 @@ import android.widget.Button
 import com.example.myapplication.*
 import com.example.myapplication.BroadcastReceiver.BroadcastReceiverTask
 import com.example.myapplication.DemoProject.LoginActivity
+import com.example.myapplication.Json.JsonPassingActivity
+import com.example.myapplication.Json.retrofit.GetData
 import com.example.myapplication.SaveFileActivity
 import com.example.myapplication.MultithreadingTask.MultithreadingTask
 import com.example.myapplication.workmanager.WorkManagerActivity
@@ -43,6 +45,9 @@ class ActivityAllProject2 : AppCompatActivity() {
         }
         findViewById<Button>(R.id.btn22).setOnClickListener {
             startActivity(Intent(this, MapActivity::class.java))
+        }
+        findViewById<Button>(R.id.btn23).setOnClickListener {
+            startActivity(Intent(this, GetData::class.java))
         }
     }
 }

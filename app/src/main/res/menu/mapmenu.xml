@@ -5,12 +5,12 @@
         android:id="@+id/item_default"
         android:icon="@drawable/ic_map"/>
     <item android:title="Satellite"
-        android:id="@+id/item_Satellite"
+        android:id="@+id/item_satellite"
         android:icon="@drawable/ic_map"/>
     <item android:title="Terrain"
-        android:id="@+id/item_Terrain"
+        android:id="@+id/item_terrain"
         android:icon="@drawable/ic_map"/>
-    <item android:title="Traffic"
-        android:id="@+id/item_Traffic"
+    <item android:title="hybrid"
+        android:id="@+id/item_hybrid"
         android:icon="@drawable/ic_map"/>
 </menu>
