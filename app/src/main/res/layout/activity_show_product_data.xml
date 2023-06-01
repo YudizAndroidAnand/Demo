@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Json.retrofit.ShowProductData">
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:id="@+id/textview_title12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/imageview"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/textview_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textview_title12"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/textview_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textview_description"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/textview_discountPercentage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textview_price"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/textview_rating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textview_discountPercentage"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/textview_stock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textview_rating"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/textview_brand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textview_stock"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/textview_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textview_brand"
+        android:layout_marginTop="5dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

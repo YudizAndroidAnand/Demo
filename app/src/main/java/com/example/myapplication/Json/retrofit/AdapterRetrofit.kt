@@ -1,6 +1,5 @@
 package com.example.myapplication.Json.retrofit
 import android.content.Context
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +10,7 @@ import com.example.myapplication.R
 import com.squareup.picasso.Picasso
 
 class AdapterRetrofit(val context: Context, private var productlist: MutableList<ProductData>): RecyclerView.Adapter<AdapterRetrofit.MyViewHolder>() {
-
+    private var onClickListener: OnClickListener? = null
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.textview_title)
         val price : TextView = itemView.findViewById(R.id.textview_price)
@@ -25,6 +24,7 @@ class AdapterRetrofit(val context: Context, private var productlist: MutableList
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+
         val currentPosition = productlist[position]
         holder.title.text = currentPosition.title
         holder.price.text = currentPosition.price.toString()
@@ -32,10 +32,23 @@ class AdapterRetrofit(val context: Context, private var productlist: MutableList
         Picasso.get()
             .load(currentPosition.thumbnail)
             .into(holder.image)
+        holder.itemView.setOnClickListener {
+            if (onClickListener != null) {
+                onClickListener!!.onClick(position, productlist )
+            }
+        }
     }
-
     override fun getItemCount(): Int {
         return productlist.size
     }
+    fun setOnClickListener(onClickListener: OnClickListener) {
+        this.onClickListener = onClickListener
+    }
+    // onClickListener Interface
+    interface OnClickListener {
+        fun onClick(position: Int,productlist: MutableList<ProductData>)
+    }
+
+    companion object
 }
 
