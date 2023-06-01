@@ -49,5 +49,8 @@ class ActivityAllProject2 : AppCompatActivity() {
         findViewById<Button>(R.id.btn23).setOnClickListener {
             startActivity(Intent(this, GetData::class.java))
         }
+        findViewById<Button>(R.id.btn24).setOnClickListener {
+            startActivity(Intent(this, PushNotification::class.java))
+        }
     }
 }

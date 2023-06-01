@@ -42,7 +42,7 @@ class GetData : AppCompatActivity() {
                 myAdapter!!.setOnClickListener(object : AdapterRetrofit.OnClickListener {
                     override fun onClick(position: Int, productlist: MutableList<ProductData>) {
                         val intent = Intent(this@GetData, ShowProductData::class.java)
-
+                        intent.putExtra("keys","${productlist[position]}")
                         startActivity(intent)
                     }
                 })
