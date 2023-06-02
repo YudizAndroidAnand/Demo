@@ -15,20 +15,17 @@ class PushNotification : FirebaseMessagingService() {
         super.onNewToken(token)
         Log.d(TAG, "my token: $token")
     }
-
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)
-
+        Log.d(TAG, "my message: $message")
         if(message.notification != null){
-            getNotification()
+            message.notification?.body?.let { getNotification(it) }
             Log.d(TAG, "Refreshed message ")
         }
     }
-
-
-    private fun getNotification() {
+    @SuppressLint("ObsoleteSdkInt")
+    private fun getNotification(message: String) {
         val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = "Notification Channel"
             val descriptionText = "Notification Description"
@@ -39,8 +36,8 @@ class PushNotification : FirebaseMessagingService() {
             notificationManager.createNotificationChannel(channel)
         }
         val builder = NotificationCompat.Builder(this, "channel")
-            .setSmallIcon(R.drawable.ic_home)
-            .setContentTitle("title")
+            .setSmallIcon(R.drawable.ic_notification)
+            .setContentTitle(message)
             .setContentText("text")
             .setPriority(NotificationCompat.PRIORITY_HIGH)
         notificationManager.notify(12, builder.build())
