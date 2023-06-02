@@ -1,6 +1,7 @@
 package com.example.myapplication.Json.retrofit
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class ProductData (
     @SerializedName("id"                ) var id                 : Int?              = null,
@@ -14,4 +15,4 @@ data class ProductData (
     @SerializedName("category"          ) var category           : String?           = null,
     @SerializedName("thumbnail"         ) var thumbnail          : String?           = null,
     @SerializedName("images"            ) var images             : ArrayList<String> = arrayListOf()
-)
+): Serializable

@@ -1,5 +1,6 @@
 package com.example.myapplication.Json.retrofit
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -7,16 +8,18 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.viewpager.widget.PagerAdapter
 import com.example.myapplication.R
+import com.squareup.picasso.Picasso
 
 class ImageAdapter(val context : Context, private val imagelist :List<String>) : PagerAdapter(){
     private var layoutInflater: LayoutInflater? = null
     private lateinit var  imgview : ImageView
+    @SuppressLint("SuspiciousIndentation")
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
 
         layoutInflater = LayoutInflater.from(context)
         val view =    layoutInflater!!.inflate(R.layout.activity_show_product_data, container, false)
-        imgview = view.findViewById(R.id.imageview)
-        //   Picasso.get().load(imagelist[position]).into(imgview)
+        imgview = view.findViewById(R.id.imageview_big_product)
+           Picasso.get().load(imagelist[position]).into(imgview)
         container.addView(view, position)
         return view
     }

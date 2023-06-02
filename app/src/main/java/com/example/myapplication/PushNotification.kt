@@ -1,4 +1,5 @@
 package com.example.myapplication
+import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.ContentValues.TAG
@@ -11,12 +12,19 @@ import com.google.firebase.messaging.RemoteMessage
 
 class PushNotification : FirebaseMessagingService() {
     override fun onNewToken(token: String) {
-        Log.d(TAG, "Refreshed token: $token")
+        super.onNewToken(token)
+        Log.d(TAG, "my token: $token")
     }
 
-    override fun onMessageReceived(remoteMessage: RemoteMessage) {
-        getNotification()
+    override fun onMessageReceived(message: RemoteMessage) {
+        super.onMessageReceived(message)
+
+        if(message.notification != null){
+            getNotification()
+            Log.d(TAG, "Refreshed message ")
+        }
     }
+
 
     private fun getNotification() {
         val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -34,11 +42,7 @@ class PushNotification : FirebaseMessagingService() {
             .setSmallIcon(R.drawable.ic_home)
             .setContentTitle("title")
             .setContentText("text")
-            .setStyle(
-                NotificationCompat.BigTextStyle()
-                    .bigText("Much longer text that cannot fit one line.Much longer text that cannot fit one line.Much longer text that cannot fit one line.")
-            )
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
         notificationManager.notify(12, builder.build())
     }
 }

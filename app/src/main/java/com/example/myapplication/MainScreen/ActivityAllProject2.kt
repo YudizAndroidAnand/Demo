@@ -8,7 +8,7 @@ import android.widget.Button
 import com.example.myapplication.*
 import com.example.myapplication.BroadcastReceiver.BroadcastReceiverTask
 import com.example.myapplication.DemoProject.LoginActivity
-import com.example.myapplication.Json.JsonPassingActivity
+import com.example.myapplication.Json.Dataparsing.JsonPassingActivity
 import com.example.myapplication.Json.retrofit.GetData
 import com.example.myapplication.SaveFileActivity
 import com.example.myapplication.MultithreadingTask.MultithreadingTask
@@ -48,9 +48,6 @@ class ActivityAllProject2 : AppCompatActivity() {
         }
         findViewById<Button>(R.id.btn23).setOnClickListener {
             startActivity(Intent(this, GetData::class.java))
-        }
-        findViewById<Button>(R.id.btn24).setOnClickListener {
-            startActivity(Intent(this, PushNotification::class.java))
         }
     }
 }

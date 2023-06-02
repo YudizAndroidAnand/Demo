@@ -24,9 +24,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".PushNotification"
-            android:exported="false" />
-        <activity
             android:name=".Json.retrofit.ShowProductData"
             android:exported="false" />
         <activity
@@ -41,7 +38,7 @@
             android:name=".MapActivity"
             android:exported="false" />
         <activity
-            android:name=".Json.JsonPassingActivity"
+            android:name=".Json.Dataparsing.JsonPassingActivity"
             android:exported="false" />
         <activity
             android:name=".TestActivity"

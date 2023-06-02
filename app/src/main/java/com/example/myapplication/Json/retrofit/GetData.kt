@@ -3,7 +3,6 @@ package com.example.myapplication.Json.retrofit
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
@@ -42,7 +41,9 @@ class GetData : AppCompatActivity() {
                 myAdapter!!.setOnClickListener(object : AdapterRetrofit.OnClickListener {
                     override fun onClick(position: Int, productlist: MutableList<ProductData>) {
                         val intent = Intent(this@GetData, ShowProductData::class.java)
-                        intent.putExtra("keys","${productlist[position]}")
+                        val product = productlist[position]
+                        val data = ProductData(product.id,product.title,product.description,product.price,product.discountPercentage,product.rating,product.stock,product.brand,product.category,product.thumbnail,product.images)
+                        intent.putExtra("keys",data)
                         startActivity(intent)
                     }
                 })

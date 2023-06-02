@@ -48,7 +48,5 @@ class AdapterRetrofit(val context: Context, private var productlist: MutableList
     interface OnClickListener {
         fun onClick(position: Int,productlist: MutableList<ProductData>)
     }
-
-    companion object
 }
 

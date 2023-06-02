@@ -1,4 +1,4 @@
-package com.example.myapplication.Json
+package com.example.myapplication.Json.Dataparsing
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -33,8 +33,8 @@ class JsonPassingActivity : AppCompatActivity() {
         val result = "$id\n $title\n $body\n $userId\n $tags\n $reactions\n $geoLat\n $geoLng"
         print(result)
         val gson = Gson()
-        val deserialize : JsonData = gson.fromJson(jsonString,JsonData::class.java)
-        val serialize : String = gson.toJson(JsonData::class.java)
+        //val deserialize : JsonData = gson.fromJson(jsonString,JsonData::class.java)
+        //val serialize : String = gson.toJson(JsonData::class.java)
 
     }
 }

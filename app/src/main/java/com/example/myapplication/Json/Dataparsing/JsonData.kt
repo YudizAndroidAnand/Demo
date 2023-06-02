@@ -1,4 +1,4 @@
-package com.example.myapplication.Json
+package com.example.myapplication.Json.Dataparsing
 
 import com.google.gson.annotations.SerializedName
 import org.json.JSONArray
