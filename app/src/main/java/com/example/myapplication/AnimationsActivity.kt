@@ -9,7 +9,6 @@ import android.util.Pair
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
-import com.example.myapplication.Layout.MainActivity
 
 class AnimationsActivity : AppCompatActivity() {
 

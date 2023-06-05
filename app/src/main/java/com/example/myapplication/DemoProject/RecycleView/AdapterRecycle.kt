@@ -45,7 +45,7 @@ class AdapterRecycle(val context: CoroutineScope, private var userlist: MutableL
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val titleName : TextView = itemView.findViewById(R.id.textview_title)
-        val descriptionName :TextView = itemView.findViewById(R.id.textview_description)
+        val descriptionName :TextView = itemView.findViewById(R.id.textview_product_description)
         val editbutton : Button = itemView.findViewById(R.id.button_edit)
         val deletebutton : Button = itemView.findViewById(R.id.button_delete)
     }

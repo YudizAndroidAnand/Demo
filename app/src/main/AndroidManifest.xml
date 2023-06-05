@@ -24,10 +24,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".Json.retrofit.ShowProductData"
+            android:name=".DataBindingTestActivity"
             android:exported="false" />
         <activity
-            android:name=".Json.retrofit.GetData"
+            android:name=".json.retrofit.ShowProductDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".json.retrofit.GetDataActivity"
             android:exported="false" />
 
         <meta-data
@@ -38,7 +41,7 @@
             android:name=".MapActivity"
             android:exported="false" />
         <activity
-            android:name=".Json.Dataparsing.JsonPassingActivity"
+            android:name=".json.Dataparsing.JsonPassingActivity"
             android:exported="false" />
         <activity
             android:name=".TestActivity"
@@ -53,28 +56,28 @@
             android:name=".DemoProject.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MultithreadingTask.MultithreadingFourthTask"
+            android:name=".multiThreadingTask.MultithreadingFourthTask"
             android:exported="false" />
         <activity
-            android:name=".MultithreadingTask.MultithreadingThirdTask"
+            android:name=".multiThreadingTask.MultithreadingThirdTask"
             android:exported="false" />
         <activity
-            android:name=".MultithreadingTask.MultithreadingSecondTask"
+            android:name=".multiThreadingTask.MultithreadingSecondTask"
             android:exported="false" />
         <activity
-            android:name=".MultithreadingTask.MultithreadingTask"
+            android:name=".multiThreadingTask.MultithreadingTask"
             android:exported="false" />
         <activity
-            android:name=".MultithreadingTask.MultithreadingFirstTask"
+            android:name=".multiThreadingTask.MultithreadingFirstTask"
             android:exported="false" />
         <activity
-            android:name=".Layout.ActivityLayout"
+            android:name=".layout.ActivityLayout"
             android:exported="false" />
         <activity
-            android:name=".Layout.ActivityView"
+            android:name=".layout.ActivityView"
             android:exported="false" />
         <activity
-            android:name=".CustomButton.CustomButton"
+            android:name=".customButton.CustomButton"
             android:exported="false" />
         <activity
             android:name=".ShapesDrawable"
@@ -83,7 +86,7 @@
             android:name=".Tab_layout"
             android:exported="false" />
         <activity
-            android:name=".RecycleView.RecyclerView"
+            android:name=".recycleView.RecyclerView"
             android:exported="false" />
         <activity
             android:name=".FloatingButtonActivity"
@@ -95,31 +98,31 @@
             android:name=".Fragment.ActivityFragment"
             android:exported="true" />
         <activity
-            android:name=".Dialog.DialogDateTime"
+            android:name=".dialog.DialogDateTime"
             android:exported="false" />
         <activity
-            android:name=".Dialog.DialogBoxActivity"
+            android:name=".dialog.DialogBoxActivity"
             android:exported="false" />
         <activity
-            android:name=".Notification.ActivityNotification"
+            android:name=".notification.ActivityNotification"
             android:exported="false" />
         <activity
-            android:name=".Layout.SetLayout"
+            android:name=".layout.SetLayout"
             android:exported="false" />
         <activity
-            android:name=".Layout.LayoutConstraint"
+            android:name=".layout.LayoutConstraint"
             android:exported="false" />
         <activity
-            android:name=".Layout.LayoutFrame"
+            android:name=".layout.LayoutFrame"
             android:exported="false" />
         <activity
-            android:name=".Layout.LayoutLinear"
+            android:name=".layout.LayoutLinear"
             android:exported="false" />
         <activity
-            android:name=".Layout.LayoutRelative"
+            android:name=".layout.LayoutRelative"
             android:exported="false" />
         <activity
-            android:name=".MainScreen.ActivityAllProject2"
+            android:name=".mainScreen.ActivityAllProject2"
             android:exported="false" />
         <activity
             android:name=".IntentFilterActivity"
@@ -133,17 +136,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BroadcastReceiver.BroadcastReceiverTask"
+            android:name=".broadcastReceiver.BroadcastReceiverTask"
             android:exported="false" />
         <activity
-            android:name=".BroadcastReceiver.BroadcastReceiverActivity"
+            android:name=".broadcastReceiver.BroadcastReceiverActivity"
             android:exported="false" />
         <activity
-            android:name=".BroadcastReceiver.BroadcastReceiverCustomActivity"
+            android:name=".broadcastReceiver.BroadcastReceiverCustomActivity"
             android:exported="false" />
 
         <receiver
-            android:name=".BroadcastReceiver.MyBroadcastReceiver"
+            android:name=".broadcastReceiver.MyBroadcastReceiver"
             android:exported="true"
             tools:ignore="ExportedReceiver" />
 
@@ -160,7 +163,7 @@
             android:name=".AnimationsActivity"
             android:exported="false" />
         <activity
-            android:name=".MainScreen.ActivityAllProject"
+            android:name=".mainScreen.ActivityAllProject"
             android:exported="true"
             android:hardwareAccelerated="true">
             <intent-filter>
@@ -177,6 +180,6 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
     </application>
+
 </manifest>

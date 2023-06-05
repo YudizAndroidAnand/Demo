@@ -6,7 +6,7 @@
     android:layout_height="300dp"
     android:background="@drawable/shapedialog"
 
-    tools:context=".Dialog.DialogBoxActivity">
+    tools:context=".dialog.DialogBoxActivity">
 
     <TextView
         android:id="@+id/txtview"

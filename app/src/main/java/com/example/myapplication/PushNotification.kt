@@ -9,8 +9,8 @@ import android.content.Intent
 import android.os.Build
 import android.util.Log
 import androidx.core.app.NotificationCompat
-import com.example.myapplication.Json.retrofit.GetData
-import com.example.myapplication.RecycleView.RecyclerView
+import com.example.myapplication.json.retrofit.GetDataActivity
+import com.example.myapplication.recycleView.RecyclerView
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
@@ -61,7 +61,7 @@ class PushNotification : FirebaseMessagingService() {
                 return PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
             }
             "GetData" -> {
-                val intent = Intent(applicationContext, GetData::class.java)
+                val intent = Intent(applicationContext, GetDataActivity::class.java)
                 intent.addCategory(Intent.CATEGORY_LAUNCHER)
                 intent.action = Intent.ACTION_MAIN
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP

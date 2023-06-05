@@ -45,6 +45,13 @@
     <string name="hide_pointer">hide pointer</string>
     <string name="hide_current">"hide current "</string>
     <string name="hide_zoom">hide zoom</string>
+    <string name="textview_brand">Brand :</string>
+    <string name="textview_description">Description :</string>
+    <string name="textview_price">Price :</string>
+    <string name="textview_discountpercentage">DiscountPercentage :</string>
+    <string name="textview_rating">Rating :</string>
+    <string name="textview_stock">Stock :</string>
+    <string name="textview_category">Category :</string>
 
 
 </resources>

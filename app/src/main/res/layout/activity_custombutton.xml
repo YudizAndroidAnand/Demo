@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CustomButton.CustomButton">
+    tools:context=".customButton.CustomButton">
 
 
-    <com.example.myapplication.CustomButton.BtnProgressbar
+    <com.example.myapplication.customButton.BtnProgressbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:size = "Large"
@@ -15,5 +15,5 @@
         android:layout_margin="20dp"
         app:custextcolor = "@color/black"
         android:id="@+id/customvieww">
-    </com.example.myapplication.CustomButton.BtnProgressbar>
+    </com.example.myapplication.customButton.BtnProgressbar>
 </RelativeLayout>
