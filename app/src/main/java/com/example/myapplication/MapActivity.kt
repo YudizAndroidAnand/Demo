@@ -2,13 +2,17 @@ package com.example.myapplication
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
 import android.location.Address
 import android.location.Geocoder
+import android.location.Location
+import android.location.LocationManager
 import android.os.Bundle
+import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.CheckBox
@@ -16,33 +20,49 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.location.LocationManagerCompat.isLocationEnabled
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.GoogleMap.MAP_TYPE_NORMAL
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import java.io.IOException
+import java.util.*
 
 
-class MapActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMapClickListener {
     private  val locationPermissionRequestCode = 1
     private lateinit var mMap: GoogleMap
-    private lateinit var fusedLocationClient: FusedLocationProviderClient
-    private lateinit var checkBoxGPS : CheckBox
+    private lateinit var marker : Marker
+    private lateinit var geocoder : Geocoder
+    private lateinit var mFusedLocationClient: FusedLocationProviderClient
+    private lateinit var location : Location
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         val mapFragment = supportFragmentManager.findFragmentById(R.id.mapFragment) as SupportMapFragment
         mapFragment.getMapAsync(this)
-
+    }
+    override fun onMapClick(latlng: LatLng) {
+        marker.remove()
+        val geocoder = Geocoder(this)
+        val address : List<Address> = geocoder.getFromLocation(latlng.latitude,latlng.longitude,1) as List<Address>
+        marker = mMap.addMarker(MarkerOptions().position(latlng).title(address[0].getAddressLine(0)))!!
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latlng,10f))
     }
     @SuppressLint("SuspiciousIndentation")
     override fun onMapReady(googleMap: GoogleMap) {
+
         mMap = googleMap
+        mMap.mapType = MAP_TYPE_NORMAL
+        mMap.uiSettings.isZoomControlsEnabled = true
+        mMap.uiSettings.isCompassEnabled = true
+        mMap.uiSettings.isZoomGesturesEnabled = true
         if (ContextCompat.checkSelfPermission(this,android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             mMap.isMyLocationEnabled = true
                     getCurrentLocation()
@@ -56,12 +76,42 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
-            R.id.item_default -> mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
+            R.id.item_default -> mMap.mapType = MAP_TYPE_NORMAL
             R.id.item_satellite -> mMap.mapType = GoogleMap.MAP_TYPE_SATELLITE
             R.id.item_terrain -> mMap.mapType = GoogleMap.MAP_TYPE_TERRAIN
             R.id.item_hybrid -> mMap.mapType = GoogleMap.MAP_TYPE_HYBRID
-        }
 
+            R.id.current_btn_map -> {
+                if(item.isChecked) {
+                    mMap.uiSettings.isMyLocationButtonEnabled  = true
+                    item.isChecked = false
+                }else{
+                    mMap.uiSettings.isMyLocationButtonEnabled  = false
+                    item.isChecked = true
+                }
+
+
+                Toast.makeText(this, item.isChecked.toString(), Toast.LENGTH_SHORT).show()
+            }
+            R.id.current_pointer_map -> {
+                if (item.isChecked){
+                    getCurrentLocation()
+                    item.isChecked = false
+                }else{
+                    marker.remove()
+                    item.isChecked = true
+                }
+            }
+            R.id.zoom_btn_map -> {
+                if(item.isChecked) {
+                    mMap.uiSettings.isZoomControlsEnabled = true
+                    item.isChecked = false
+                }else{
+                    mMap.uiSettings.isZoomControlsEnabled = false
+                    item.isChecked = true
+                }
+            }
+        }
         return super.onOptionsItemSelected(item)
     }
     private fun bitMapFromVector(context: Context, vectorResId:Int): BitmapDescriptor? {
@@ -72,40 +122,50 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         vectorDrawable.draw(canvas)
         return BitmapDescriptorFactory.fromBitmap(bitmap)
     }
+    private fun isLocationEnabled(): Boolean {
+        val locationManager: LocationManager =
+            getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
+            LocationManager.NETWORK_PROVIDER
+        )
+    }
     private fun getCurrentLocation() {
-        checkBoxGPS = findViewById(R.id.checkbox_gps)
-        checkBoxGPS.setOnClickListener {
-            if (checkBoxGPS.isEnabled){
-                if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                        this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                ) {
-                    return@setOnClickListener
-                }
-                fusedLocationClient.lastLocation.addOnSuccessListener { location ->
-                    if (location != null) {
-                        val currentLatLng = LatLng(location.latitude, location.longitude)
-                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 15f))
-                        mMap.addMarker(MarkerOptions().position(LatLng(location.latitude, location.longitude)).title("Current Location").icon(bitMapFromVector(applicationContext, R.drawable.ic_car)))
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                android.Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                this, android.Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            return
+        }
+        if(isLocationEnabled()){
+            mFusedLocationClient.lastLocation.addOnCompleteListener(this){
+                    task-> location = task.result
+                if(location != null){
+                    geocoder = Geocoder(this, Locale.getDefault())
 
-                    }
+                    val list : List<Address>? = geocoder.getFromLocation(location.latitude,
+                        location.longitude,1)
+                    val address : Address? = list?.get(0)
 
-                    val geocoder = Geocoder(this)
-                    try {
-                        val addresses: List<Address> = geocoder.getFromLocation(
-                            location.latitude,
-                            location.longitude,
-                            1
-                        ) as List<Address>
+                    marker = mMap.addMarker(MarkerOptions().position(
+                        LatLng(location.latitude,
+                            location.longitude)
+                    ).title(address?.getAddressLine(0)).icon(bitMapFromVector(applicationContext, R.drawable.ic_car)))!!
 
-                        if (addresses.isNotEmpty()) {
-                            val address = addresses[0].getAddressLine(0)
-                            Toast.makeText(this, "Current Address: $address", Toast.LENGTH_LONG).show()
-                        }
-                    } catch (e: IOException) {
-                        e.printStackTrace()
-                    }
+                    // Move Camera on Current location
+                    mMap.animateCamera(CameraUpdateFactory.
+                    newLatLngZoom(LatLng(location.latitude,
+                        location.longitude),11f))
+                }else{
+                    Toast.makeText(this, "Address not found", Toast.LENGTH_SHORT).show()
                 }
             }
+        }else{
+            Toast.makeText(this, "Please turn on Location", Toast.LENGTH_SHORT).show()
+            val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
+            startActivity(intent)
         }
     }
 
