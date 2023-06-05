@@ -15,12 +15,10 @@ import android.os.Bundle
 import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.CheckBox
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.location.LocationManagerCompat.isLocationEnabled
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -29,7 +27,6 @@ import com.google.android.gms.maps.GoogleMap.MAP_TYPE_NORMAL
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
-import java.io.IOException
 import java.util.*
 
 
@@ -40,6 +37,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMapClick
     private lateinit var geocoder : Geocoder
     private lateinit var mFusedLocationClient: FusedLocationProviderClient
     private lateinit var location : Location
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
@@ -81,7 +79,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMapClick
             R.id.item_terrain -> mMap.mapType = GoogleMap.MAP_TYPE_TERRAIN
             R.id.item_hybrid -> mMap.mapType = GoogleMap.MAP_TYPE_HYBRID
 
-            R.id.current_btn_map -> {
+            R.id.current_map -> {
                 if(item.isChecked) {
                     mMap.uiSettings.isMyLocationButtonEnabled  = true
                     item.isChecked = false
@@ -93,7 +91,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMapClick
 
                 Toast.makeText(this, item.isChecked.toString(), Toast.LENGTH_SHORT).show()
             }
-            R.id.current_pointer_map -> {
+            R.id.current_pointer -> {
                 if (item.isChecked){
                     getCurrentLocation()
                     item.isChecked = false
@@ -102,7 +100,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMapClick
                     item.isChecked = true
                 }
             }
-            R.id.zoom_btn_map -> {
+            R.id.zoom_btn -> {
                 if(item.isChecked) {
                     mMap.uiSettings.isZoomControlsEnabled = true
                     item.isChecked = false
@@ -141,26 +139,21 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMapClick
         }
         if(isLocationEnabled()){
             mFusedLocationClient.lastLocation.addOnCompleteListener(this){
-                    task-> location = task.result
-                if(location != null){
-                    geocoder = Geocoder(this, Locale.getDefault())
+                     task-> location = task.result!!
+                geocoder = Geocoder(this, Locale.getDefault())
 
-                    val list : List<Address>? = geocoder.getFromLocation(location.latitude,
-                        location.longitude,1)
-                    val address : Address? = list?.get(0)
+                val list : List<Address>? = geocoder.getFromLocation(location.latitude,
+                    location.longitude,1)
+                val address : Address? = list?.get(0)
 
-                    marker = mMap.addMarker(MarkerOptions().position(
-                        LatLng(location.latitude,
-                            location.longitude)
-                    ).title(address?.getAddressLine(0)).icon(bitMapFromVector(applicationContext, R.drawable.ic_car)))!!
+                marker = mMap.addMarker(MarkerOptions().position(
+                    LatLng(location.latitude,
+                        location.longitude)
+                ).title(address?.getAddressLine(0)).icon(bitMapFromVector(applicationContext, R.drawable.ic_car)))!!
 
-                    // Move Camera on Current location
-                    mMap.animateCamera(CameraUpdateFactory.
-                    newLatLngZoom(LatLng(location.latitude,
-                        location.longitude),11f))
-                }else{
-                    Toast.makeText(this, "Address not found", Toast.LENGTH_SHORT).show()
-                }
+                mMap.animateCamera(CameraUpdateFactory.
+                newLatLngZoom(LatLng(location.latitude,
+                    location.longitude),11f))
             }
         }else{
             Toast.makeText(this, "Please turn on Location", Toast.LENGTH_SHORT).show()

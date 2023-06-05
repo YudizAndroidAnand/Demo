@@ -4,30 +4,30 @@
     <item android:id="@+id/map_type" android:title="Maps">
         <menu>
             <item android:id="@+id/item_default"
-                android:title="Default"
+                android:title="@string/default_map"
                 />
             <item android:id="@+id/item_satellite"
-                android:title="Satellite"
+                android:title="@string/satellite_map"
                 />
             <item android:id="@+id/item_terrain"
-                android:title="Terrain"
+                android:title="@string/terrain_map"
                 />
             <item android:id="@+id/item_hybrid"
-                android:title="hybrid"
+                android:title="@string/hybrid_map"
                 />
         </menu>
     </item>
 
 
-    <item android:id="@+id/map_settings" android:title="setting">
+    <item android:id="@+id/map_settings" android:title="@string/map_setting">
         <menu>
             <group android:checkableBehavior="all">
-                <item android:id="@+id/current_pointer_map"
-                    android:title="hide pointer" />
-                <item android:id="@+id/current_btn_map"
-                    android:title="hide current btn" />
-                <item android:id="@+id/zoom_btn_map"
-                    android:title="hide zoom btn" />
+                <item android:id="@+id/current_pointer"
+                    android:title="@string/hide_pointer" />
+                <item android:id="@+id/current_map"
+                    android:title="@string/hide_current" />
+                <item android:id="@+id/zoom_btn"
+                    android:title="@string/hide_zoom" />
 
             </group>
         </menu>

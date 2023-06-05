@@ -9,18 +9,18 @@ import android.widget.ImageView
 import androidx.viewpager.widget.PagerAdapter
 import com.example.myapplication.R
 import com.squareup.picasso.Picasso
+import java.util.*
 
 class ImageAdapter(val context : Context, private val imagelist :List<String>) : PagerAdapter(){
     private var layoutInflater: LayoutInflater? = null
     private lateinit var  imgview : ImageView
     @SuppressLint("SuspiciousIndentation")
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
-
         layoutInflater = LayoutInflater.from(context)
         val view =    layoutInflater!!.inflate(R.layout.activity_show_product_data, container, false)
         imgview = view.findViewById(R.id.imageview_big_product)
-           Picasso.get().load(imagelist[position]).into(imgview)
-        container.addView(view, position)
+            Picasso.get().load(imagelist[position]).into(imgview)
+            Objects.requireNonNull(container).addView(view)
         return view
     }
     override fun getCount(): Int {

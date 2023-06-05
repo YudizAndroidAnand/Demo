@@ -27,7 +27,8 @@ class AdapterRetrofit(val context: Context, private var productlist: MutableList
 
         val currentPosition = productlist[position]
         holder.title.text = currentPosition.title
-        holder.price.text = currentPosition.price.toString()
+        val pricedata = "${currentPosition.price.toString()}$"
+        holder.price.text = pricedata
         holder.category.text = currentPosition.category
         Picasso.get()
             .load(currentPosition.thumbnail)
