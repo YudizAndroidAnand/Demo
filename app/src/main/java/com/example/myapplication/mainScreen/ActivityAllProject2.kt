@@ -8,11 +8,12 @@ import android.widget.Button
 import com.example.myapplication.*
 import com.example.myapplication.broadcastReceiver.BroadcastReceiverTask
 import com.example.myapplication.DemoProject.LoginActivity
-import com.example.myapplication.json.Dataparsing.JsonPassingActivity
+import com.example.myapplication.json.dataParsing.JsonPassingActivity
 import com.example.myapplication.json.retrofit.GetDataActivity
 import com.example.myapplication.SaveFileActivity
 import com.example.myapplication.multiThreadingTask.MultithreadingTask
-import com.example.myapplication.workmanager.WorkManagerActivity
+import com.example.myapplication.mvcLiveData.MvcHomePageActivity
+import com.example.myapplication.workManager.WorkManagerActivity
 
 class ActivityAllProject2 : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -48,6 +49,9 @@ class ActivityAllProject2 : AppCompatActivity() {
         }
         findViewById<Button>(R.id.btn23).setOnClickListener {
             startActivity(Intent(this, GetDataActivity::class.java))
+        }
+        findViewById<Button>(R.id.btn24).setOnClickListener {
+            startActivity(Intent(this, MvcHomePageActivity::class.java))
         }
     }
 }

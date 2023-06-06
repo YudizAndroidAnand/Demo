@@ -23,7 +23,6 @@
         <item>c++</item>
     </string-array>
     <string name="title_activity_frist">FristActivity</string>
-    <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
@@ -48,10 +47,18 @@
     <string name="textview_brand">Brand :</string>
     <string name="textview_description">Description :</string>
     <string name="textview_price">Price :</string>
-    <string name="textview_discountpercentage">DiscountPercentage :</string>
+    <string name="textview_discount_percentage">DiscountPercentage :</string>
     <string name="textview_rating">Rating :</string>
     <string name="textview_stock">Stock :</string>
     <string name="textview_category">Category :</string>
+    <string name="maps">Maps</string>
+    <string name="textview_name">Name :</string>
+    <string name="title_activity_home_page">HomePageActivity</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="edit">edit</string>
+    <string name="todo">TODO</string>
 
 
 </resources>

@@ -8,6 +8,7 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
+import com.example.myapplication.json.dataParsing.body
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -41,18 +42,15 @@ class GetDataActivity : AppCompatActivity() {
                 progressBar.visibility = View.GONE
                 newRecyclerView = findViewById(R.id.recyclerview_product)
                 val myAdapter = response.body()
-                    ?.let { AdapterRetrofit(this@GetDataActivity, it.productData) }
-                newRecyclerView.adapter = myAdapter
-                myAdapter!!.setOnClickListener(object : AdapterRetrofit.OnClickListener {
-                    override fun onClick(position: Int, productList: MutableList<ProductData>) {
-                        val intent = Intent(this@GetDataActivity, ShowProductDataActivity::class.java)
-                        val product = productList[position]
-                        val data = ProductData(product.id,product.title,product.description,product.price,product.discountPercentage,product.rating,product.stock,product.brand,product.category,product.thumbnail,product.images)
-                        intent.putExtra("keys",data)
-                        startActivity(intent)
-                        finish()
+                    ?.let {
+                        AdapterRetrofit(this@GetDataActivity, it.productData) { body ->
+                            val intent = Intent(this@GetDataActivity, ShowProductDataActivity::class.java)
+                            intent.putExtra("keys", body.id)
+                            startActivity(intent)
+                            finish()
+                        }
                     }
-                })
+                newRecyclerView.adapter = myAdapter
             }
             override fun onFailure(call: Call<UserDataProduct>, t: Throwable) {
                 Toast.makeText(this@GetDataActivity, "Fail to get the data..", Toast.LENGTH_SHORT)

@@ -42,7 +42,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMapClick
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-
         val mapFragment = supportFragmentManager.findFragmentById(R.id.mapFragment) as SupportMapFragment
         mapFragment.getMapAsync(this)
     }

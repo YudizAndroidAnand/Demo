@@ -1,4 +1,4 @@
-package com.example.myapplication.workmanager
+package com.example.myapplication.workManager
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.pm.PackageManager

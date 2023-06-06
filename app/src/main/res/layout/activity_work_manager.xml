@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".workmanager.WorkManagerActivity">
+    tools:context=".workManager.WorkManagerActivity">
 
     <EditText
         android:layout_width="match_parent"

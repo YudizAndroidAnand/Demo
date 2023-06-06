@@ -1,4 +1,4 @@
-package com.example.myapplication.json.Dataparsing
+package com.example.myapplication.json.dataParsing
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
