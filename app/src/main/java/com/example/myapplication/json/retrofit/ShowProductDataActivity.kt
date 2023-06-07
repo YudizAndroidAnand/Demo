@@ -37,7 +37,7 @@ class ShowProductDataActivity : AppCompatActivity(){
                     val b : Int = intent.getIntExtra("keys",0)
                     val mainList = response.body()!!.productData
                     val a = mainList[b]
-                    binding.productVariable.description = a.description
+                    //binding.productVariable.description = a.description
                 }
 
 //              productprice.text = b.price.toString()

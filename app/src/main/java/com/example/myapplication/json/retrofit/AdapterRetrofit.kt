@@ -9,14 +9,12 @@ import com.example.myapplication.R
 import com.example.myapplication.databinding.UserRawRetrofitBinding
 import com.squareup.picasso.Picasso
 
-class AdapterRetrofit(val context: Context, private var productList: MutableList<ProductData>, val click : (productList:ProductData) -> Unit): RecyclerView.Adapter<AdapterRetrofit.MyViewHolder>() {
+class AdapterRetrofit(val context: Context, private var productList: MutableList<ProductData>, private val click : (productList:ProductData) -> Unit): RecyclerView.Adapter<AdapterRetrofit.MyViewHolder>() {
 
     class MyViewHolder(itemView: UserRawRetrofitBinding) : RecyclerView.ViewHolder(itemView.root) {
 
         fun bind(click: (productList: ProductData) -> Unit,position: Int){
-
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {

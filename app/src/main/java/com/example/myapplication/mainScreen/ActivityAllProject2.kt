@@ -12,7 +12,7 @@ import com.example.myapplication.json.dataParsing.JsonPassingActivity
 import com.example.myapplication.json.retrofit.GetDataActivity
 import com.example.myapplication.SaveFileActivity
 import com.example.myapplication.multiThreadingTask.MultithreadingTask
-import com.example.myapplication.mvcLiveData.MvcHomePageActivity
+import com.example.myapplication.mvcLiveData.LiveDataActivity
 import com.example.myapplication.workManager.WorkManagerActivity
 
 class ActivityAllProject2 : AppCompatActivity() {
@@ -51,7 +51,7 @@ class ActivityAllProject2 : AppCompatActivity() {
             startActivity(Intent(this, GetDataActivity::class.java))
         }
         findViewById<Button>(R.id.btn24).setOnClickListener {
-            startActivity(Intent(this, MvcHomePageActivity::class.java))
+            startActivity(Intent(this, LiveDataActivity::class.java))
         }
     }
 }
